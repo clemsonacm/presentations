@@ -1,6 +1,6 @@
 # Clemson ACM Seminar Presentations
 
-TODO. Go view presentations at <x>
+TODO. Make note here of where to view presentations.
 
 ## Presentation Descriptions
 

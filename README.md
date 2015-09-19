@@ -22,9 +22,11 @@ Generally speaking, you can view any presentation like this, once it is hosted:
 
     http://wherever.your.host.is/seminar-folder?seminar-name
 
-If someone with the username (`ama2`) had checked out the seminars to their Clemson web hosting in a folder called `seminars`, you would visit this URL to get the Git presentation:
+If someone with the username `ama2` had checked out the seminars to their Clemson web hosting in a folder called `seminars`, you would visit this URL to get the Git presentation:
 
     http://people.cs.clemson.edu/~ama2/seminars?git
+
+How's that work? `index.html` dynamically loads markdown files into the presentation based on the `?seminar-name` (the `location.search` variable) part of the URL. Accessing `?git` loads the file `markdown/git.md`. 
 
 #### On your Clemson web hosting
 
@@ -48,9 +50,7 @@ You will need a way to *host* these files. You cannot simply open the files in y
 
 ### ...for Editing Content
 
-`index.html` dynamically loads markdown files into the presentation based on the contents of `?seminar-name` (the `location.search` variable): accessing `?git` loads the file `markdown/git.md`. All you have to do after setting the presentations up for viewing is to edit the markdown and refresh the page.
-
-You probably don't even have to touch `index.html`.
+All you have to do after setting the presentations up for viewing is to edit the markdown and refresh the page. You probably don't even have to touch `index.html`.
 
 ### ...for Editing Style
 

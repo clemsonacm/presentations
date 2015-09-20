@@ -61,11 +61,13 @@ Robert Underwood - ACM Vice President
 
 - Makefiles are a great way to automate building, testing...
 
-    a.out: project.c
-        gcc project.c -o a.out
+```make
+a.out: project.c
+    gcc project.c -o a.out
 
-    run: a.out
-        ./a.out "arguments"
+run: a.out
+    ./a.out "arguments"
+```
 
 
 ## Automate Builds
@@ -104,6 +106,7 @@ Robert Underwood - ACM Vice President
 - Handin is Mercurial-based, so you can use the command line
 - Or, [Austin made a makefile for you already][1]
 
+[1]: https://github.com/protractorninja/cu-handin-magic-make/
 
 
 ## What To Do When Things Go Bad

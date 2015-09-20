@@ -41,6 +41,8 @@ Robert Underwood - ACM Vice President
 - Commit when you get something working
 - Tools: `git`, `mercurial`
 
+[git]: people.cs.clemson.edu/~robertu/git/git.html
+
 
 ## Consider Test Driven Development
 
@@ -141,6 +143,7 @@ Robert Underwood - ACM Vice President
 
 - [Austin's magic makefile][1] automates submission and testing on the lab machines
 
+[1]: https://github.com/protractorninja/cu-handin-magic-make/
 
 
 ## Questions
@@ -149,5 +152,3 @@ Send feedback to acm@cs.clemson.edu
 
 This material available under [CC By-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/)
 
-[1]: https://github.com/protractorninja/cu-handin-magic-make/
-[git]: people.cs.clemson.edu/~robertu/git/git.html

@@ -25,14 +25,15 @@ Robert Underwood - ACM Vice President
 
 ## Starting out Strong
 
-- Think, don't just code
-- Give yourself enough time to finish
-- Test driven development
-- Version control
 
+## Happy Thoughts
 
+- Think about what you're doing before you code
+- Try using paper or a whiteboard to plan
+- Give yourself enough time to do the project!
+  - Do a little bit of work, regularly
 
-## Version Control
+## Consider Version Control
 
 - Check out [git][git] seminar to get started
 - Save work in a searchable manner
@@ -40,8 +41,7 @@ Robert Underwood - ACM Vice President
 - Commit when you get something working
 
 
-
-## Test Driven Development
+## Consider Test Driven Development
 
 - Write tests first
 - Make sure the tests fail
@@ -51,20 +51,12 @@ Robert Underwood - ACM Vice President
 
 ## Automate the Tedium
 
-- Automate builds
-- Automate testing
-- Automate documentation
-- Automate deployment
-
-
-
 ## Automate Builds
 
 - Write a Makefile
 - Create targets for each executable
 - Should build from just the source
 - `all` and `clean` targets
-
 
 
 ## Automate Testing
@@ -78,7 +70,6 @@ Robert Underwood - ACM Vice President
    - Memory leaks
 
 
-
 ## Automate Documentation
 
 - Saves effort of updating both
@@ -86,7 +77,6 @@ Robert Underwood - ACM Vice President
    - Create a `docs` target
    - Write documentation as you go
    - Use doxygen, javadocs, or sphinx
-
 
 
 ## Automate Deployment

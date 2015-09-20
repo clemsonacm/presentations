@@ -17,7 +17,6 @@ Robert Underwood - ACM Vice President
 
 - Starting out Strong
 - Automate the Tedium
-- Group Projects
 - What to Do When Things Go Bad
 - Finishing Smart
 
@@ -33,12 +32,14 @@ Robert Underwood - ACM Vice President
 - Give yourself enough time to do the project!
   - Do a little bit of work, regularly
 
+
 ## Consider Version Control
 
 - Check out [git][git] seminar to get started
 - Save work in a searchable manner
 - Have a log of what you've tried
 - Commit when you get something working
+- Tools: `git`, `mercurial`
 
 
 ## Consider Test Driven Development
@@ -46,10 +47,24 @@ Robert Underwood - ACM Vice President
 - Write tests first
 - Make sure the tests fail
 - Code until you pass the tests
+- Good tests means you'll know when you're done
+- Tools: `check`, `bats`
 
 
 
 ## Automate the Tedium
+
+
+## Makefiles, in brief
+
+- Makefiles are a great way to automate building, testing...
+
+    a.out: project.c
+        gcc project.c -o a.out
+
+    run: a.out
+        ./a.out "arguments"
+
 
 ## Automate Builds
 
@@ -70,64 +85,43 @@ Robert Underwood - ACM Vice President
    - Memory leaks
 
 
-## Automate Documentation
+## Automate Weird Stuff
 
-- Saves effort of updating both
-- For projects that require it:
+- Documentation?
    - Create a `docs` target
    - Write documentation as you go
    - Use doxygen, javadocs, or sphinx
+- Log files?
+   - Use python or bash
+- Bash or Python scripts are powerful!
 
 
-## Automate Deployment
+## Automate Submission
 
-- Means different things different places
-- Testing on lab machines
-- Automating submissions to Handin
-- Saves time and effort
-- Reduces stress
-
-
-
-## Handling Group Projects
-
-- Communication
-- Don't forget about dependencies
-- Buffet, Bitbucket, etc.
-- Branching
-- Mocking
-
-
-
-## Branching
-
-- Have a master branch
-- Work on separate branches
-- Fix merge conflicts on the feature branch
-- Test before merging back
-
-
-
-## Mocking
-
-- Reduce dependencies for testings
-- Write dummy classes/functions
-- Returns hard coded values
+- Saves time, effort, and stress
+- Handin is Mercurial-based, so you can use the command line
+- Or, [Austin made a makefile for you already][1]
 
 
 
 ## What To Do When Things Go Bad
 
-- Talk to your professors
+
+## Talk to your professors
+
+- Go to office hours with your problems
+- Good professors want to help you learn
 
 
 ## Debugging
 
-- `gdb` is your friend
-- `pdb` for python
+- `gdb`
+- `valgrind`
+- `git bisect` helps find where a bug was introduced
+  - As long as you can run something at every commit
 
 
-## Reverting
+## Reverting Old Changes
 
 - Commit (and branch) prior to big changes
 - `git revert` can undo a specific earlier commit
@@ -136,13 +130,16 @@ Robert Underwood - ACM Vice President
 
 ## Finishing Smart
 
+- Test everything again before you submit!
+- Sumbit early, submit often
+  - Handin lets you submit as many times as you want
 - Don't share your code without permission
 
 
 
 ## Further Resources
 
-- [Austin's magic makefile][1]
+- [Austin's magic makefile][1] automates submission and testing on the lab machines
 
 
 

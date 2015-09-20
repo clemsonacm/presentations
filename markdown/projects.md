@@ -1,17 +1,16 @@
-# Think Different: How to Code Smarter
+# Think Different
+### How to Code Smarter, not harder
 
 
-### Brought to you by Clemson ACM
+## Brought to you by Clemson ACM
 
 We're on [Steam](http://steamcommunity.com/groups/clemsonacm) &
-Freenode! Join
-#clemsonacm on chat.freenode.net!
+Freenode! Join #clemsonacm on chat.freenode.net!
 
 ### Speakers:
 
-Robert Underwood - ACM Vice President\
+Robert Underwood - ACM Vice President
  Austin Anderson - ACM President
-
 
 
 ## Coming Up
@@ -35,7 +34,7 @@ Robert Underwood - ACM Vice President\
 
 ## Version Control
 
-- Check out [git][] seminar to get started
+- Check out [git][git] seminar to get started
 - Save work in a searchable manner
 - Have a log of what you've tried
 - Commit when you get something working
@@ -129,17 +128,13 @@ Robert Underwood - ACM Vice President\
 
 ## What To Do When Things Go Bad
 
-- Talking to your professors
-- Debugging
-- Reverting
-
+- Talk to your professors
 
 
 ## Debugging
 
 - `gdb` is your friend
 - `pdb` for python
-
 
 
 ## Reverting
@@ -157,7 +152,7 @@ Robert Underwood - ACM Vice President\
 
 ## Further Resources
 
-- [Austin's magic makefile][]
+- [Austin's magic makefile][1]
 
 
 
@@ -167,5 +162,5 @@ Send feedback to acm@cs.clemson.edu
 
 This material available under [CC By-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/)
 
-[Austin's magic makefile]: https://github.com/protractorninja/cu-handin-magic-make/
+[1]: https://github.com/protractorninja/cu-handin-magic-make/
 [git]: people.cs.clemson.edu/~robertu/git/git.html

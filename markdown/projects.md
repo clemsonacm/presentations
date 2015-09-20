@@ -139,8 +139,8 @@ Robert Underwood - ACM Vice President
 
 ## Reverting
 
-- Commit (and branch)  prior to big changes
-- Prefer reverts to rebases to preserve history
+- Commit (and branch) prior to big changes
+- `git revert` can undo a specific earlier commit
 
 
 

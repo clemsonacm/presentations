@@ -61,7 +61,7 @@ Robert Underwood - ACM Vice President
 
 - Makefiles are a great way to automate building, testing...
 
-```make
+```makefile
 a.out: project.c
     gcc project.c -o a.out
 

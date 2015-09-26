@@ -26,7 +26,7 @@ If someone with the username `ama2` had checked out the seminars to their Clemso
 
     http://people.cs.clemson.edu/~ama2/seminars?git
 
-How's that work? `index.html` dynamically loads markdown files into the presentation based on the `?seminar-name` (the `location.search` variable) part of the URL. Accessing `?git` loads the file `markdown/git.md`. 
+How's that work? `index.html` dynamically loads markdown files into the presentation based on the `?seminar-name` (the `location.search` variable) part of the URL. Accessing `?git` loads the file `sources/git/git.md`. 
 
 #### On your Clemson web hosting
 

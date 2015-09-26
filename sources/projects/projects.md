@@ -51,7 +51,7 @@ Austin Anderson - ACM President
   - Make sure the tests fail
   - Code until you pass the tests
 - Extensive tests help you track progress
-- Tools: `check`, `bats`, `python unittest`
+- Tools: [`check`](http://check.sourceforge.net/), [`bats`](https://github.com/sstephenson/bats), `python unittest`
 
 
 
@@ -113,7 +113,7 @@ run: a.out
    - Exit status
 	 - tools: `bash` using `$?`
    - Memory leaks
-     - tools: `valgrind`
+     - tools: [`valgrind`](http://valgrind.org/)
 
 
 ## Automate Other Stuff
@@ -166,7 +166,7 @@ run: a.out
 ## Finishing Smart
 
 - Test everything again before you submit!
-- Sumbit early, submit often
+- Submit early, submit often
   - Handin lets you submit as many times as you want
 - Don't share your code without permission
 
@@ -192,6 +192,7 @@ run: a.out
 -  `scp` and `ssh`
 -  `find`
 -  `sed`
+-  `ag`, the [Silver Searcher](https://github.com/ggreer/the_silver_searcher)
 
 
 

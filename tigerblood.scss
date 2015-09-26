@@ -22,7 +22,7 @@
 // Colors used in the theme
 $blood: #f46d0c;
 $coal: #222;
-$codeBackground: #23241f;
+$codeBackground: #3F3F3F;
 
 $backgroundColor: $coal;
 
@@ -68,9 +68,10 @@ $selectionColor: #fff;
     font-weight: 700;
 }
 
-.reveal p code {
+.reveal code {
     background-color: $codeBackground;
     display: inline-block;
+    padding: 0px 5px;
     border-radius: 7px;
 }
 

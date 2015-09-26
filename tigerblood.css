@@ -304,10 +304,13 @@ body {
 .reveal h6 {
   font-weight: 700; }
 
-.reveal p code {
-  background-color: #23241f;
+.reveal code {
+  background-color: #3F3F3F;
   display: inline-block;
+  padding: 0px 5px;
   border-radius: 7px; }
 
 .reveal small code {
   vertical-align: baseline; }
+
+/*# sourceMappingURL=tigerblood.css.map */

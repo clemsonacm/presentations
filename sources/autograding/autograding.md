@@ -23,7 +23,7 @@ Austin Anderson - ACM President
 
 
 
-# Who are we?
+## Who are we?
 
 
 ## Clemson ACM
@@ -34,7 +34,7 @@ Austin Anderson - ACM President
 
 
 
-# Why use automation in the classroom?
+## Why use automation in the classroom?
 
 
 ## Instructor Perspective
@@ -60,7 +60,8 @@ Austin Anderson - ACM President
 - Many repetitive tasks
 
 
-# Tools for Automation
+
+## Tools for Automation
 
 
 ## awk
@@ -176,7 +177,7 @@ Running jobs at fixed times
 
 
 
-# Case study in Automation
+## Case study in Automation
 
 
 ## Introduction
@@ -204,7 +205,7 @@ Running jobs at fixed times
 
 
 
-# Wrap-Up
+## Wrap-Up
 
 
 ## Summary

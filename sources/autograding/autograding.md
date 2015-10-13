@@ -28,9 +28,9 @@ Austin Anderson - ACM President
 
 ## Clemson ACM
 
--	Student Chapter of the ACM
--	Host professional and social events for students
--	We want to make the School of Computing a better place
+- Student Chapter of the ACM
+- Host professional and social events for students
+- We want to make the School of Computing a better place
 
 
 
@@ -39,17 +39,17 @@ Austin Anderson - ACM President
 
 ## Instructor Perspective
 
--	Saves you time grading for large classes
--	Encourages students to submit early and often
--	Encourages students to use an iterative approach
--	Reinforces Test Driven Development
+- Saves you time grading for large classes
+- Encourages students to submit early and often
+- Encourages students to use an iterative approach
+- Reinforces Test Driven Development
 
 
 ## Student Perspective
 
--	Same benefits as Test Driven Development
--	Early feedback on how the project is progressing.
--	Helps us determine when we have completed the project.
+- Same benefits as Test Driven Development
+- Early feedback on how the project is progressing.
+- Helps us determine when we have completed the project.
 
 
 

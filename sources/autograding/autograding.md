@@ -216,7 +216,7 @@ Running jobs at fixed times
 
 ## Further Resources
 
-- Addional command references:
+- Additional command references:
   - UNIX `man` pages - most commands have a `man` page
   - [Grymoire][1] - great scripting resource
   - [Archwiki][2] - great command resource

@@ -15,15 +15,17 @@ Austin Anderson - ACM President
 
 ## Coming Up
 
-1. Who are we?
-2. Why use automation in the class room?
-3. How can I automate in the class room?
-4. Tools for Automation?
-5. Case study in Automation
+
+- Why would you want to automate your work?
+- What sorts of things can you automate?
+- When is automation and scripting applicable?
+- What tools should I use?
+- Thinking bigger: a case study
+- The dangers of automation
 
 
 
-## Who are we?
+# Who are we?
 
 
 ## Clemson ACM
@@ -34,7 +36,7 @@ Austin Anderson - ACM President
 
 
 
-## Why use automation in the classroom?
+## Why would you want to automate your work?
 
 
 ## Instructor Perspective
@@ -53,54 +55,38 @@ Austin Anderson - ACM President
 
 
 
-## How can I automate in the class room?
+## When is automation and scripting applicable?
+
+
+## When is it applicable?
 
 - Generating test data
 - Grading programming projects
 - Many repetitive tasks
 
 
+## When is it not applicable?
 
-## Tools for Automation
-
-
-## awk
-
-Pattern scanning and processing
-
-- `BEGIN {action}` executes before processing
-- `pattern {action}` default pattern style
-- `END {action}` executes after the file is processed
-- patterns are based on `re_format`
-- missing patterns always match, missing actions always print
-- `perl`, `python`, `ruby`
+- Where output is
+ - difficult to parse
+ - non-deterministic
 
 
-## Example awk Script
 
-```awk
-#computes the average of space delimited data
-#where the second column is even
-BEGIN {n = 0}
-$2%2 == 0 {s += $1; n++}
-END {print "sum is", s, " average is", s/n}
-```
+## What Tools Should I Use for Automation?
 
 
-## sed
+## Tools to consider
 
-Command line text manipulation
-
-- `sed 's/hello/goodbye/g [file]'` replaces "hello" with "goodbye"
-    - Prints to stdout, redirect it!
-- `sed /bad/d` deletes lines containing "bad"
-- `sed 1d;$d` deletes first and last line
-- Can use `/regexes/` or other rules, check `man sed`
+- High level languages (bash, perl, python, ruby)
+- `cron` - set it and forget it
+- `hg` - source control back-end for Handin
+- `time` - get running times
 
 
 ## bash
 
-Gluing programs together
+Great for gluing programs together
 
 - `|` pipelining
 - `&> dest` redirect stderr and stdout to dest
@@ -116,7 +102,7 @@ Gluing programs together
 for i in $(ls)
 	do
 	cd $i
-	git pull
+	hg pull
 	cd ..
 done
 ```
@@ -126,7 +112,8 @@ done
 
 Unit testing for CLI Applications
 
-- Simple way to test output and return values
+- Written in bash
+- Ease to write
 - Parsable output
 - Lightweight
 
@@ -142,33 +129,10 @@ Unit testing for CLI Applications
 ```
 
 
-## grep
-
-Find pattern in a text
-
-- uses `re_format` style regex
-- `-C3` print 3 lines of context around match
-- `-c` print number of matches
-- `-e` specify multiple patterns
-- `-r` recursively search
-- `--exclude` ignore file paths
-- `ack` and `ag`
-
-
-## valgrind
-
-A debugger that detects memory leaks and other profiling + `gdb`
-
-        valgrind --leak-check=yes program-name
-        valgrind --tool=callgrind program-name
-        valgrind --tool=cachegrind program-name
-
-
 ## cron
 
 Running jobs at fixed times
 
-- Probably the least standardized tool on this list
 - On most modern Linux boxes replaced by systemd
 - `crontab -e` edit user crontab
 - persistent crontab; system dependent location
@@ -176,11 +140,60 @@ Running jobs at fixed times
 - `anacron` and `systemd` timers
 
 
+## Example crontab
 
-## Case study in Automation
+    PATH=/usr/bin
+    SHELL=/bin/bash
+    MAILTO=acm
+    # minute hour dayOfMonth month dayOfWeek cmd
+    0 0 0 * * echo "Cron Example"
 
 
-## Introduction
+## hg
+
+Source Control System
+
+- Configure ssh access to avoid passwords
+- `hg clone` clone a repository for the first time
+- `hg pull -u` update to the latest submission
+
+
+## time
+
+Time how long it takes a program to execute
+
+- `time tar -czf foobar`
+
+
+
+## Examples of Automation
+
+
+## Cloning Repositories
+
+- Some sample code
+
+
+## Testing a student's work
+
+- Some sample code
+
+
+## Emailing Results
+
+- Some sample code
+
+
+## Generating large datasets
+
+- Some sample code
+
+
+
+## Thinking bigger: a Case Study
+
+
+## What is it, and what does it do?
 
 - Auto-grader designed by Dr. Sorber
 - Mix of python and bash
@@ -189,19 +202,37 @@ Running jobs at fixed times
 - Emails students their results
 
 
-## Deploying the Auto-grader
+## How does it help students?
 
-- Walk through the steps of creating cronjob etc
-
-
-## Writing a grading module
-
-- Include some steps on writing modules
+- Faster feedback
 
 
-## Outcomes of the Auto-grader
+## How does it help Dr. Sorber?
 
-- Include stats before and after auto-grader
+- Saves time in grading
+- Statistics regarding his experience
+
+
+## How does it work?
+
+- Downloads projects with `hg`
+- Tests student code with `python`
+- Emails results to students via `mail`
+- Saves a json file with results for grade book
+
+
+
+## The Costs of Automation
+
+- Certain mess-ups can be *catastrophic*
+	- Lost projects
+	- Wrong grades
+	- Accidental leaks
+- Using a established framework helps
+- Writing scripts will take time
+	- You'll probably [use it again][1]!
+
+[1]: https://xkcd.com/1205
 
 
 

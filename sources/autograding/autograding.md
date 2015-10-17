@@ -32,6 +32,7 @@ Austin Anderson - ACM President
 
 - Student Chapter of the ACM
 - Host professional and social events for students
+- Host the competitive programming team coached by Dr. Dean
 - We want to make the School of Computing a better place
 
 
@@ -44,7 +45,7 @@ Austin Anderson - ACM President
 - Saves you time grading for large classes
 - Encourages students to submit early and often
 - Encourages students to use an iterative approach
-- Reinforces Test Driven Development
+- Done correctly, reinforces Test Driven Development
 
 
 ## Student Perspective
@@ -52,6 +53,7 @@ Austin Anderson - ACM President
 - Same benefits as Test Driven Development
 - Early feedback on how the project is progressing.
 - Helps us determine when we have completed the project.
+- Avoid missing stupid mistakes
 
 
 
@@ -252,10 +254,13 @@ Time how long it takes a program to execute
   - [Grymoire][1] - great scripting resource
   - [Archwiki][2] - great command resource
 - Dr. Sorber's [Auto-grader][3]
+- [USACO][4], [OpenKatis][5]
 
 [1]: http://www.grymoire.com/
 [2]: https://wiki.archlinux.org/index.php/Main_Page
 [3]: http://buffet.cs.clemson.edu
+[4]: http://www.usaco.org/
+[5]: https://open.kattis.com/
 
 
 ## Questions

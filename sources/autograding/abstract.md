@@ -1,10 +1,13 @@
 # Abstract: Automation in the Classroom
 
-The purpose of this talk is to introduce how instructors could approach the topic
-of using automation in the classroom.  We will make a case for automation both
-from a student's and instructor's perspective.  Then we will get into detail about
+The purpose of this talk is to introduce how instructors could approach the
+topic of using automation in the classroom.  We will make a case for automation
+both from a student's and instructor's perspective by showing that automation
+can save time, encourage test driven development, and improve testing for
+knowledge.  We will also address concerns regarding grading automation including
+accuracy, confidentiality, and security.  Then we will get into detail about
 techniques and tools that can be used for classroom automation.  Finally we will
-examine a case study in Automation.  We will examine Dr. Jacob Sorber's work on
-the auto-grader that he has developed for his Operating Systems and Network
-Programming Courses and explain how it is implemented both technically as well
-as part of the classroom environment.
+examine case studies of how automation has and can be implemented.  We will
+examine how this has been done technically as well as part of the classroom
+environment by faculty members at the School of Computing.
+

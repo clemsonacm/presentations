@@ -230,12 +230,19 @@ Time how long it takes a program to execute
 	- Lost projects
 	- Wrong grades
 	- Accidental leaks
-- Using a established framework helps
+- Using a established framework can eliminate these problems
 - Writing scripts will take time
 	- You'll probably [use it again][1]!
 
 [1]: https://xkcd.com/1205
 
+
+## A Word on Security
+
+- The risk isn't much higher
+	-  Unless you currently carefully audit every line of code
+- Tools such as systrace, containers, vms can improve security.
+- Treat violations as Academic Integrity Issues.
 
 
 ## Wrap-Up

@@ -4,14 +4,13 @@
 
 ## Brought to you by Clemson ACM
 
-We're on [Steam](http://steamcommunity.com/groups/clemsonacm) &
-Freenode! Join #clemsonacm on chat.freenode.net!
+We're on Freenode! Join `#clemsonacm` on chat.freenode.net!
 
 ### Speakers:
 
 Robert Underwood - ACM Vice President
 
-Austin Anderson - ACM President
+Austin Anderson - Former ACM President
 
 
 ## Coming Up
@@ -29,9 +28,10 @@ Austin Anderson - ACM President
 ## Happy Thoughts
 
 - Think about what you're doing before you code
+   - Make sure you understand the spec first
 - Try using paper or a whiteboard to plan
 - Give yourself enough time to do the project!
-  - Do a little bit of work, regularly
+   - Do a little bit of work, regularly
 
 
 ## Consider Version Control
@@ -41,12 +41,12 @@ Austin Anderson - ACM President
 - Commit whenever you make progress
 - Tools: `git`, `mercurial`
 
-[git]: people.cs.clemson.edu/~robertu/git/git.html
+[git]: http://present.protractor.ninja?git
 
 
 ## Consider Test Driven Development (TDD)
 
-- Basics
+- Basics:
   - Write tests first
   - Make sure the tests fail
   - Code until you pass the tests
@@ -67,13 +67,13 @@ Austin Anderson - ACM President
 Simple example
 ```makefile
 a.out: project.c
-	gcc project.c
+   gcc project.c
 
 run: a.out
-    ./a.out "arguments"
+   ./a.out "arguments"
 ```
 
-Same thing, more functionality
+Same thing, with Make's automatic compilation rules
 ```makefile
 CC=gcc
 CFLAGS=-g -Wall
@@ -81,7 +81,7 @@ CFLAGS=-g -Wall
 a.out: project.c
 
 run: a.out
-    ./a.out "arguments"
+   ./a.out "arguments"
 ```
 
 
@@ -89,17 +89,18 @@ run: a.out
 
 - Create targets for each executable and task
 - Consider using multiple compilers
-	- `gcc` is what professors test with
-	- `clang` for readable error messages
-- `all` and `clean` targets
+   - `gcc` is what professors test with
+   - `clang` for readable error messages
+- `all` and `clean` targets are convention (and useful)
+  - Use `.PHONY` for tasks that aren't files
 
 ```makefile
 .PHONY: all run clean
 all: a.out
 clean:
-	rm a.out
+   rm a.out
 run: a.out
-    ./a.out "arguments"
+   ./a.out "arguments"
 ```
 
 
@@ -109,11 +110,11 @@ run: a.out
 - With TDD, commit when you pass more tests
 - Things you can test
    - Output
-	 - tools: `awk`, `bash`,`diff`,  `grep`
+      - tools: `awk`, `bash`, `diff`, `grep`
    - Exit status
-	 - tools: `bash` using `$?`
+      - tools: `bash` using `$?`, `bats`
    - Memory leaks
-     - tools: [`valgrind`](http://valgrind.org/)
+      - tools: [`valgrind`](http://valgrind.org/)
 
 
 ## Automate Other Stuff
@@ -124,7 +125,7 @@ run: a.out
    - Use doxygen, javadocs, or sphinx
 - Log files?
    - Use Python or Bash
-- Bash or Python scripts are powerful!
+- Bash and Python scripts can do a lot!
 
 
 ## Automate Submission
@@ -144,7 +145,7 @@ run: a.out
 
 - Go to office hours with your problems
 - Good professors want to help you learn
-- Go early; everyone goes the night before
+- Go early! Everyone goes the night before
 
 
 ## Debugging
@@ -152,7 +153,7 @@ run: a.out
 - `gdb`
 - `valgrind`
 - `git bisect` helps find where a bug was introduced
-  - Only if commits are testable
+   - Only works if commits are testable
 
 
 ## Reverting Old Changes
@@ -167,7 +168,7 @@ run: a.out
 
 - Test everything again before you submit!
 - Submit early, submit often
-  - Handin lets you submit as many times as you want
+   - Handin lets you submit as many times as you want
 - Don't share your code without permission
 
 
@@ -175,9 +176,9 @@ run: a.out
 ## Further Resources
 
 - More command reference:
-  - UNIX `man` pages - most commands have a `man` page
-  - [Grymoire][1] - great scripting resource
-  - [Archwiki][2] - great command resource
+   - UNIX `man` pages - most commands have a `man` page
+   - [Grymoire][1] - great scripting resource
+   - [Archwiki][2] - great command resource
 - [Austin's magic makefile][3] automates submission and testing on the lab machines
 
 [1]: http://www.grymoire.com/
@@ -187,12 +188,12 @@ run: a.out
 
 ## Useful Commands
 
--  `time`
--  `watch`
--  `scp` and `ssh`
--  `find`
--  `sed`
--  `ag`, the [Silver Searcher](https://github.com/ggreer/the_silver_searcher)
+- `time`
+- `watch`
+- `scp` and `ssh`
+- `find`
+- `sed`
+- `ag`, the [Silver Searcher](https://github.com/ggreer/the_silver_searcher)
 
 
 

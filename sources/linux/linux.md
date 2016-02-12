@@ -3,14 +3,14 @@
 
 ### Brought to you by Clemson ACM
 
-We're on [Steam](http://steamcommunity.com/groups/clemsonacm) &
-[Facebook](https://www.facebook.com/groups/283823058297107/)!
+We're on [Steam](http://steamcommunity.com/groups/clemsonacm)
+and Freenode on `#clemsonacm`
 
 ### Speakers:
 
-Robert Underwood - ACM Vice President \
- Austin Anderson - ACM President
+Robert Underwood - ACM Vice President 
 
+Marshall Clyburn - ACM President
 
 
 ## Coming up
@@ -28,7 +28,6 @@ Robert Underwood - ACM Vice President \
 # What's up with Linux?
 
 
-
 ## Linux: A Short History
 
 - Created in 1991 by **Linus Torvalds**
@@ -37,7 +36,6 @@ Robert Underwood - ACM Vice President \
 - Kernel is still being maintained by Torvalds & open source
     contributors
 - You could contribute if you wanted!
-
 
 
 ## What's a Distribution?
@@ -53,13 +51,11 @@ Robert Underwood - ACM Vice President \
     - Behind-the-scenes *settings*
 
 
-
 ## Common Distributions
 
 - Some common distributions are Ubuntu (and children Xubuntu,
     Kubuntu), Fedora, Debian, and Arch Linux (not for the faint of
     heart) -- you configure *everything*
-
 
 
 ## Big Names in \*nix
@@ -71,7 +67,6 @@ Robert Underwood - ACM Vice President \
     dude.
 
 
-
 ## "Kernel" and Other Scary Words
 
 - **Kernel** is the part of Linux that interacts with your PC's
@@ -81,14 +76,12 @@ Robert Underwood - ACM Vice President \
 - **Bash** is the default shell.
 
 
-
 ## "Kernel" and Other Scary Words
 
 - **Grub** is a common Linux *boot manager* that remembers how to get
     from turning your computer on into the OS.
 - **PATH** is an *environment variable* that remembers where to look
     for executables when you type one in the terminal
-
 
 
 ## "Kernel" and Other Scary Words
@@ -103,7 +96,6 @@ Robert Underwood - ACM Vice President \
     compiling code.
 
 
-
 ## "Building from Source"
 
 - When you can't get a pre-compiled executable
@@ -112,7 +104,6 @@ Robert Underwood - ACM Vice President \
 - `make`
 - `sudo make install`
 - Didn't work? Read README
-
 
 
 ## Packaging systems
@@ -127,17 +118,15 @@ Robert Underwood - ACM Vice President \
         - `apt-get dist-upgrade` - update all packages
 
 
-
 ## Other Packaging systems
 
-- `yum` - used on Red Hat based system, including Fedora
+- `dnf` - used on Red Hat based system, including Fedora
 - `pacman` - used on Arch Linux
 - `rpm` - Legacy back end that is compatible with yum
 
 
 
 # The Linux File System
-
 
 
 ## Basic Hierarchy
@@ -154,12 +143,10 @@ Robert Underwood - ACM Vice President \
     **Some distros are a little different in how they manage these folders.**
 
 
-
 ## Everything is a File
 
 - Linux sees every object as a subclass of a file.
 - Folders, links, output devices, executables are all "files"!
-
 
 
 ## Where are my .exes?
@@ -177,8 +164,7 @@ Robert Underwood - ACM Vice President \
 # Terminal Power
 
 
-
-## echo "Simple navigation commands"
+## echo "navigation commands"
 
 - Stuck? `Ctrl+c` force quits the running program.
 - `pwd` lists your current directory
@@ -188,8 +174,7 @@ Robert Underwood - ACM Vice President \
     - `ls -a` shows even `.hidden-files`
 
 
-
-## echo "Simple navigation commands"
+## echo "file commands"
 
 ### THERE IS NO TRASHCAN. DELETION IS PERMANENT.
 
@@ -200,7 +185,6 @@ Robert Underwood - ACM Vice President \
     - `rm -r directory` deletes a directory
 
 
-
 ## --Flags?! : Command Structure
 
 - Generally
@@ -208,11 +192,14 @@ Robert Underwood - ACM Vice President \
     `[optional parameter] parameter-list...`
 - Some flags need their own value arguments after them
     - `ping -c 12` OR `ping --count=12`
+
+
+## Common Flags
+
 - Structure varies by program: try `progname --help` or `-h` 
     - Sometimes simpler than `man progname`
 - Many commands use `--verbose` or `-v` to print *more* useful
     information. Verbosity is good!
-
 
 
 ## Terminal Symbols & Shorthand
@@ -223,7 +210,6 @@ Robert Underwood - ACM Vice President \
 - `~` is your *user directory*
 - `!!` is the *previously entered command*
     - Use `sudo !!` to run the last command under sudo
-
 
 
 ## Terminal Symbols & Shorthand
@@ -237,13 +223,16 @@ Robert Underwood - ACM Vice President \
     - `command&` will run `command` in the background
 
 
-
 ## Messing with Output
 
 - Any text output you see in the terminal comes from **standard out**
     (the same stream as **cout** in C++ and **printf()** in C)
     - `echo input` - print `input` to standard out
     - `cat input.file` - print contents of `file` to the terminal
+
+
+## Messing with Output
+
 - Many commands like `grep` and `less` read from **standard in**
     (**cin** in C++, what **scanf()** reads from in C) if no other args
     are specified
@@ -252,7 +241,6 @@ Robert Underwood - ACM Vice President \
         word)
     - `less input.file` allows you to read up and down through a large
         chunk of data
-
 
 
 ## Piping and Redirection
@@ -267,7 +255,6 @@ Robert Underwood - ACM Vice President \
     output
 
 
-
 ## Redirection
 
 - `>>` *appends to* `output.file` with `progname`'s output
@@ -278,7 +265,6 @@ Robert Underwood - ACM Vice President \
     `progname`
 
 
-
 ## Shell History
 
 ### "How did I run that again?"
@@ -287,7 +273,6 @@ Robert Underwood - ACM Vice President \
 - `history` - print previous commands
 - Try it with grep -- `history | grep ls`
 - `ctrl-r` for a history search
-
 
 
 ## Shell configuration
@@ -301,7 +286,6 @@ Robert Underwood - ACM Vice President \
     it for now.
 
 
-
 ## `man` and Other Awesome Commands
 
 - `man` - summons an *extensive* manual page for about anything
@@ -313,7 +297,6 @@ Robert Underwood - ACM Vice President \
 - `curl -O [URL]` copies a file from the web
 
 
-
 ## `man` and Other Awesome Commands
 
 - `tar` - manage tarball (.tar) and tarball + gzipped (.tgz, .tar.gz)
@@ -323,7 +306,6 @@ Robert Underwood - ACM Vice President \
     - `tar -czf` (**c**reate **z**e **f**iles!!)
         `archivename.tgz files...` to create an archive
     - [Relevant XKCD comic](http://imgs.xkcd.com/comics/tar.png)
-
 
 
 ## Shell Scripts
@@ -339,7 +321,6 @@ Robert Underwood - ACM Vice President \
 # Getting Owned by Permissions
 
 
-
 ## Users, Root and Groups
 
 - *Users* are unique accounts
@@ -347,6 +328,10 @@ Robert Underwood - ACM Vice President \
     - **DON'T TRY TO USE ROOT ON THE CU MACHINES**.
     - Run one command as root with `sudo <command>` and temporarily
         login with `sudo su`
+
+
+## Users, Root and Groups
+
 - Users in the same *Groups* share permissions pertaining to that
     group
     - E.g. users in `sudoers` can use `sudo` (the admin group might be
@@ -359,7 +344,6 @@ Robert Underwood - ACM Vice President \
 # Working from other machines
 
 
-
 ## Getting to your files with SSH
 
 - `ssh username@access.cs.clemson.edu` starts a remote connection to
@@ -368,12 +352,10 @@ Robert Underwood - ACM Vice President \
 - **DON'T RUN/COMPILE ON access.cs.clemson.edu**
 
 
-
 ## Using a VM
 
 - VirtualBox
     - Can run a Linux VM inside of Windows/Mac OS X
-
 
 
 ## Windows: Cygwin?
@@ -382,19 +364,9 @@ Robert Underwood - ACM Vice President \
 
 
 
-## Your Free Clemson Web Hosting
-
-- Run `cd /web/home/username/public_html`
-    - Trust us, it's there
-- Files you put there will be served on the web at
-    `people.cs.clemson.edu/~username/`
-- Change permissions so the web server can access them
-    - `chmod a+r [serving files]`
-    - `chmod a+g [sub-directories]`
-
-
 
 # Wrap-up
+
 
 ## Final warnings
 
@@ -410,7 +382,6 @@ Robert Underwood - ACM Vice President \
     `School of Computing` in the subject line.
 
 
-
 ## The snapshot system
 
 - Contents are in `~/.snapshot`
@@ -420,18 +391,24 @@ Robert Underwood - ACM Vice President \
 ### SNAPSHOTS ARE UNIQUE TO CLEMSON. DON'T RELY ON IT!
 
 
+## Your Free Clemson Web Hosting
+
+- Run `cd /web/home/username/public_html`
+    - Trust us, it's there
+- Files you put there will be served on the web at
+    `people.cs.clemson.edu/~username/`
+- Change permissions so the web server can access them
+    - `chmod a+r [serving files]`
+    - `chmod a+g [sub-directories]`
+
+
 ## Further resources
 
-- `http://www.cs.clemson.edu/help/linux-workshop/soc_linux_cheatsheet.pdf`
-    -- the cheatsheet we're distributing
-- `http://www.cs.clemson.edu/help/linux-workshop`
-    - Steps to install a VM just like the lab machines
-    - submit/handin information is deprecated
+- [Cheetsheet](http://www.cs.clemson.edu/help/linux-workshop/soc_linux_cheatsheet.pdf) of commands
 - Plug a long command into
     [ExplainShell.com](http://explainshell.com/) to see what it does
-- We're on [Steam](http://steamcommunity.com/groups/clemsonacm) &
-    [Facebook](https://www.facebook.com/groups/283823058297107/)!
-- Lists system admin staff
+- We're on [Steam](http://steamcommunity.com/groups/clemsonacm) and freenode at `#clemsonacm`
+- Admins work in the main hallway
 
 
 
@@ -440,3 +417,4 @@ Robert Underwood - ACM Vice President \
 Send us feedback at `acm@cs.clemson.edu`!
 
 This material available under [CC By-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/)
+

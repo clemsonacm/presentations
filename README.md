@@ -12,7 +12,7 @@ Deploying these presentations is very easy! How much work you'll have to do depe
 
 For future reference, the command that you will want to use to *clone* this repository is:
 
-    git clone --recursive https://github.com/clemsonacm/seminars.git
+    git clone --recursive https://github.com/clemsonacm/presenations.git
 
 ### ...for Viewing
 
@@ -22,27 +22,27 @@ Generally speaking, you can view any presentation like this, once it is hosted:
 
     http://wherever.your.host.is/seminar-folder?seminar-name
 
-If someone with the username `ama2` had checked out the seminars to their Clemson web hosting in a folder called `seminars`, you would visit this URL to get the Git presentation:
+If someone with the username `ama2` had checked out the presenations to their Clemson web hosting in a folder called `presenations`, you would visit this URL to get the Git presentation:
 
-    http://people.cs.clemson.edu/~ama2/seminars?git
+    http://people.cs.clemson.edu/~ama2/presenations?git
 
 How's that work? `index.html` dynamically loads markdown files into the presentation based on the `?seminar-name` (the `location.search` variable) part of the URL. Accessing `?git` loads the file `sources/git/git.md`. 
 
 #### On your Clemson web hosting
 
 1. After logging in via SSH or a lab terminal, visit your Clemson web hosting folder at `/web/home/$USER/public_html`. If you don't already have one, you may want to follow the **Web Site** instructions at [the UNIX help desk](http://www.cs.clemson.edu/help/unixaccount.html) page.
-2. Clone this repository with `git clone --recursive https://github.com/clemsonacm/seminars.git`
+2. Clone this repository with `git clone --recursive https://github.com/clemsonacm/presenations.git`
 3. Run `chown -R o+r <folder>` to fix your permissions.
-4. Done! Try it out by accessing `http://people.cs.clemson.edu/~YOUR-USERNAME/seminars?git`
+4. Done! Try it out by accessing `http://people.cs.clemson.edu/~YOUR-USERNAME/presenations?git`
 
 #### Other Places
 
 You will need a way to *host* these files. You cannot simply open the files in your web browser.
 
-1. Clone this repository with `git clone --recursive https://github.com/clemsonacm/seminars.git`.
+1. Clone this repository with `git clone --recursive https://github.com/clemsonacm/presenations.git`.
 2. If you have a hosting solution already (hosting from a web server, etc.), you're done!
 3. If you don't have Python installed, go install Python. Python 2 and 3 will both work.
-4. `cd seminars`
+4. `cd presenations`
 5. Run Python's quick HTTP server.
    - For Python 2: `python -m SimpleHTTPServer`
    - For Python 3: `python -m http.server`

@@ -4,13 +4,13 @@
 ### An introduction to iptables, firewalld, and pf, brought to you by Clemson ACM
 
 We're on [Steam](http://steamcommunity.com/groups/clemsonacm) &
-
-[freenode #clemsonacm](irc.freenode.com)!
+[freenode #clemsonacm](irc://chat.freenode.net/clemsonacm)!
 
 ### Speakers:
 
 Robert Underwood - ACM Vice President
 
+Foster Mclane- ACM Webmaster
 
 
 ## Coming Up
@@ -44,15 +44,13 @@ Robert Underwood - ACM Vice President
 - Legacy firewall for Linux
 - Very simple, very powerful
 - Uses a series of chains based on traffic
-- Use on Linux and need fine control 
-
+- Use on Linux and where you need fine control 
 
 
 ## Important files
 
 - `/etc/sysconfig/iptables` \# Permanent rules
 - `/etc/services` \# List of services
-
 
 
 ## Important commands
@@ -67,19 +65,17 @@ Robert Underwood - ACM Vice President
 
 ## firewalld
 
-- Part of `systemd` project for Linux
+- Inspired by the systemd project
 - Provides a ease of use layer for `iptables`
 - Puts the focus on "zones" and "services"
 - Controls to what apps may change the firewall
 - Use on newer Linux where clarity is important
 
 
-
 ## Important Files
 
 - `/usr/lib/firewalld/` \# Definitions 
 - `/etc/firewalld/` \# Overrides 
-
 
 
 ## Important commands
@@ -96,12 +92,10 @@ Robert Underwood - ACM Vice President
 - Use on BSD and on your router if possible
 
 
-
 ## Important Files
 
 - `/etc/rc.conf` \# Enable pf here
 - `/etc/pf.conf` \# Actual firewall configuration
-
 
 
 ## Important commands
@@ -120,7 +114,6 @@ Robert Underwood - ACM Vice President
 ## iptables
 
 
-
 ## Set Up
 
     iptables -F && iptables -X
@@ -132,11 +125,9 @@ Robert Underwood - ACM Vice President
           169.254.0.0/16, 0.0.0.0/8, 240.0.0.0/4, 255.255.255.255/32"
 
 
-
 ## Bad packets and default deny
 
     iptables -P INPUT DROP
-
 
 
 ## Block ipv6
@@ -144,7 +135,6 @@ Robert Underwood - ACM Vice President
     ip6tables -P INPUT DROP
     ip6tables -P OUTPUT DROP
     ip6tables -P FORWARD DROP
-
 
 
 ## Block misbehaving addresses and log them
@@ -155,28 +145,29 @@ Robert Underwood - ACM Vice President
     iptables -A LOGDROP -j DROP
 
 
-
 ## Block more bad packets
 
     iptables -A INPUT -m conntrack --ctstate INVALID -j LOGDROP
     iptables -t raw -I PREROUTING -m rpfilter -j LOGDROP
     for addr in $broken; do
-       iptables -A INPUT -p tcp -i $ext_if -s $addr --dport http -j REJECT 
-       iptables -A INPUT -p tcp -i $ext_if -s $addr --dport ssh -j REJECT 
+       iptables -A INPUT tcp -i $ext_if -s $addr -j REJECT 
     done
-
 
 
 ## Exceptions for applications
 
-    iptables -I INPUT 1 -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
-    iptables -A INPUT -m limit --limit 5/m --limit-burst 10 -p tcp --dport 22 -j ACCEPT
+    iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+    iptables -A INPUT -m limit --limit 5/m --limit-burst 10 -m conntrack \
+		--ctstate NEW -p tcp --dport 22 -j ACCEPT
+    iptables -A INPUT -m limit --limit 5/m --limit-burst 10 -m conntrack \
+		--ctstate NEW -p tcp --dport http -j ACCEPT
+    iptables -A INPUT -m limit --limit 5/m --limit-burst 10 -m conntrack \
+		--ctstate NEW -p tcp --dport https -j ACCEPT
     iptables -A INPUT -j DROP
 
 
 
 # firewalld
-
 
 
 ## Zone
@@ -197,7 +188,6 @@ Robert Underwood - ACM Vice President
     </zone>
 
 
-
 ## Services
 
     <?xml version="1.0" encoding="utf-8"?>
@@ -209,13 +199,12 @@ Robert Underwood - ACM Vice President
     </service>
 
 
-
 ## Configuration
 
     firewall-cmd --zone=public --add-interface=$ext_if
     for addr in $broken; do
-       firewall-cmd --zone=public  \
-          --add-rich-rule="rule family='ipv4' source address=\"$addr\" log limit value='5/m' drop"
+		firewall-cmd --zone=public  --add-rich-rule="rule family='ipv4' \
+			source address=\"$addr\" log limit value='5/m' drop"
     done
     firewall-cmd --permanent --zone=public --add-service=ssh
     firewall-cmd --zone=public --add-service=ssh
@@ -225,7 +214,6 @@ Robert Underwood - ACM Vice President
 
 
 # pf
-
 
 
 ## Set Up
@@ -240,7 +228,6 @@ Robert Underwood - ACM Vice President
     set skip on lo0
 
 
-
 ## Bad packets and default deny
 
     match in all scrub (no-df max-mss 1440)
@@ -249,19 +236,16 @@ Robert Underwood - ACM Vice President
     antispoof quick for ($ext_if) inet
 
 
-
 ## Block ipv6
 
     block out quick inet6 all
     block in quick inet6 all
 
 
-
 ## Block more bad packets
 
     block in quick from { $broken urpf-failed no-route } to any
     block out quick on $ext_if from any to { $broken no-route }
-
 
 
 ## Block misbehaving addresses and log them
@@ -273,7 +257,6 @@ Robert Underwood - ACM Vice President
     #Block Chinese address to ssh and web
     table <chuugoku> persist file "/etc/cn.zone"
     block in quick proto tcp from <chuugoku> to any port { 80 22 }
-
 
 
 ## Exceptions for applications
@@ -291,7 +274,6 @@ Robert Underwood - ACM Vice President
 - Know your network
 - Please use a firewall to secure your device
 - Open source firewalls are powerful and can be easy to implement
-
 
 
 ## Further Resources

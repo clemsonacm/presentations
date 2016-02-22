@@ -10,7 +10,7 @@ We're on [Steam](http://steamcommunity.com/groups/clemsonacm) &
 
 Robert Underwood - ACM Vice President
 
-Foster Mclane- ACM Webmaster
+Foster McLane- ACM Webmaster
 
 
 ## Coming Up

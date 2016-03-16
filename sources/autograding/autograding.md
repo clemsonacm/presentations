@@ -3,13 +3,11 @@
 
 ## An introduction to Automation
 
-Brought to you by Clemson ACM.
+Brought to you by Clemson ACM
 
 ### Speakers:
 
 Robert Underwood - ACM Vice President
-
-Austin Anderson - ACM President
 
 
 
@@ -84,6 +82,7 @@ Austin Anderson - ACM President
 - `cron` - set it and forget it
 - `hg` - source control back-end for Handin
 - `time` - get running times
+- `timeout` - enforce runtime limits
 
 
 ## bash
@@ -103,9 +102,11 @@ Great for gluing programs together
 ```bash
 for i in $(ls)
 	do
-	cd $i
-	hg pull
-	cd ..
+	if [ "$i" != "prof" ]; then
+		cd $i
+		hg pull
+		cd ..
+	fi
 done
 ```
 
@@ -116,7 +117,7 @@ Unit testing for CLI Applications
 
 - Written in bash
 - Ease to write
-- Parsable output
+- Parse-able output
 - Lightweight
 
 
@@ -124,9 +125,9 @@ Unit testing for CLI Applications
 
 ```bash
 @test "Set example code matches Sample Output" {
-	run ./set.exe
+	run ./set.exe < set.in
 	[ "$status" -eq 0 ]
-	[ "$output" = "$(cat set.in)" ]
+	[ "$output" = "$(cat set.out)" ]
 }
 ```
 
@@ -135,7 +136,7 @@ Unit testing for CLI Applications
 
 Running jobs at fixed times
 
-- On most modern Linux boxes replaced by systemd
+- On most modern Linux systems it is replaced by systemd
 - `crontab -e` edit user crontab
 - persistent crontab; system dependent location
 - *warning* cron ignores *all* environment variables
@@ -157,6 +158,7 @@ Source Control System
 
 - Configure ssh access to avoid passwords
 - `hg clone` clone a repository for the first time
+- `hg incomming` see if there are updates without pulling them
 - `hg pull -u` update to the latest submission
 
 
@@ -167,28 +169,58 @@ Time how long it takes a program to execute
 - `time tar -czf foobar`
 
 
+## timeout
+
+Kill a program after a timeout
+
+- `timeout 10 ./script.sh`
+
+
 
 ## Examples of Automation
 
 
 ## Cloning Repositories
 
-- Some sample code
+	hg clone ssh://handin@handin.cs.clemson.edu/semester_name/course_name 
+	pushd course_name
+	./update
 
 
 ## Testing a student's work
 
-- Some sample code
+	#!/bin/bash
+	TESTS=$PWD
+	OUTPUT=$PWD/output
+	pushd assignments/asg_name
+	for dir in *
+	do
+		if [ -d "$dir" ];then
+			mkdir -p $OUTPUT/"$dir"
+			pushd $dir
+			timeout 10 make > $OUTPUT/$dir/output-make.txt
+			timeout 10 $TESTS/test1.sh &> $OUTPUT/$dir/output-1.txt
+			timeout 10 $TESTS/test2.sh &> $OUTPUT/$dir/output-2.txt
+			popd
+		fi
+	done
 
 
 ## Emailing Results
 
-- Some sample code
+	#!/bin/bash
+	mail -s 'Autograder Results' student@clemson.edu < results.txt
 
 
 ## Generating large datasets
 
-- Some sample code
+	#!/usr/bin/env python3
+	import random
+	with open("testdata.in","w") as outfile:
+		for i in range(100000):
+			outfile.write(random.randint(0,100))
+
+Then test with sample solution
 
 
 
@@ -197,8 +229,8 @@ Time how long it takes a program to execute
 
 ## What is it, and what does it do?
 
-- Auto-grader designed by Dr. Sorber
-- Mix of python and bash
+- Autograder used in CPSC 322
+- Written in Python
 - Downloads student submissions
 - Can award partial credit
 - Emails students their results
@@ -232,9 +264,14 @@ Time how long it takes a program to execute
 	- Accidental leaks
 - Using a established framework can eliminate these problems
 - Writing scripts will take time
-	- You'll probably [use it again][1]!
 
-[1]: https://xkcd.com/1205
+
+## However you'll probably use it again
+
+![](http://imgs.xkcd.com/comics/is_it_worth_the_time.png)
+
+source: xkcd
+
 
 
 ## A Word on Security

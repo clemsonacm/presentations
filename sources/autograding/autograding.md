@@ -33,11 +33,15 @@ Robert Underwood - ACM Vice President
 - We want to make the School of Computing a better place
 
 
-## How we can help your students
+## How we can help your students?
 
 - We teach introductory topics like Linux and Git
 - We bring in companies in to present technical topics
-- The programming team teaches algorithmic problem solving
+- We host the programming team and seminar
+	- Teaches teamwork
+	- Teaches problem solving
+- Open to everyone interested
+
 
 
 ## Why would you want to automate your work?
@@ -97,7 +101,7 @@ Source Control System
 
 - Configure ssh access to avoid passwords
 - `hg clone` clone a repository for the first time
-- `hg incomming` see if there are updates without pulling them
+- `hg incomming` check for updates without pulling them
 - `hg pull -u` update to the latest submission
 
 
@@ -217,8 +221,6 @@ done
 		for i in range(100000):
 			outfile.write(random.randint(0,100))
 
-Then test with sample solution
-
 
 
 ## Thinking bigger: a Case Study
@@ -246,6 +248,7 @@ Then test with sample solution
 - Saves you defensive programming
 
 
+
 # Common Objections
 
 
@@ -255,7 +258,7 @@ Then test with sample solution
 	- Lost projects
 	- Wrong grades
 	- Accidental leaks
-- Using a established framework can eliminate these problems
+- Using well designed framework helps
 - Writing scripts will take time
 
 
@@ -270,7 +273,7 @@ source: xkcd
 
 - The risk isn't much higher
 	-  Unless you currently carefully audit every line of code
-- Tools such as systrace, containers, vms can improve security.
+- Tools like systrace, containers, vms can improve security.
 - Treat violations as Academic Integrity Issues.
 
 

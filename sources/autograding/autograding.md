@@ -85,16 +85,6 @@ Robert Underwood - ACM Vice President
 ## What Tools Should I Use for Automation?
 
 
-## Tools to consider
-
-- High level languages (bash, perl, python, ruby)
-- `cron` - set it and forget it
-- `hg` - source control back-end for Handin
-- `mail` - Send mail to students
-- `time` - get running times
-- `timeout` - enforce runtime limits
-
-
 ## hg
 
 Source Control System
@@ -110,18 +100,6 @@ Source Control System
 	hg clone ssh://handin@handin.cs.clemson.edu/semester_name/course_name 
 	pushd course_name
 	./update
-
-
-## bash
-
-Great for gluing programs together
-
-- `|` pipelining
-- `&> dest` redirect stderr and stdout to dest
-- `word` executes word in a subshell first
-- support `for` and `while` loops
-- even includes functions!
-- `zsh`, `fish`
 
 
 ## time

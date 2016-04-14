@@ -13,13 +13,12 @@ Robert Underwood - ACM Vice President
 
 ## Coming Up
 
-
 - Why would you want to automate your work?
 - What sorts of things can you automate?
 - When is automation and scripting applicable?
 - What tools should I use?
 - Thinking bigger: a case study
-- The dangers of automation
+- Common Objections
 
 
 
@@ -29,10 +28,16 @@ Robert Underwood - ACM Vice President
 ## Clemson ACM
 
 - Student Chapter of the ACM
-- Host professional and social events for students
-- Host the competitive programming team coached by Dr. Dean
+- Professional and social events for students
+- Competitive programming team coached by Dr. Dean
 - We want to make the School of Computing a better place
 
+
+## How we can help your students
+
+- We teach introductory topics like Linux and Git
+- We bring in companies in to present technical topics
+- The programming team teaches algorithmic problem solving
 
 
 ## Why would you want to automate your work?
@@ -81,8 +86,26 @@ Robert Underwood - ACM Vice President
 - High level languages (bash, perl, python, ruby)
 - `cron` - set it and forget it
 - `hg` - source control back-end for Handin
+- `mail` - Send mail to students
 - `time` - get running times
 - `timeout` - enforce runtime limits
+
+
+## hg
+
+Source Control System
+
+- Configure ssh access to avoid passwords
+- `hg clone` clone a repository for the first time
+- `hg incomming` see if there are updates without pulling them
+- `hg pull -u` update to the latest submission
+
+
+## Cloning Repositories
+
+	hg clone ssh://handin@handin.cs.clemson.edu/semester_name/course_name 
+	pushd course_name
+	./update
 
 
 ## bash
@@ -97,18 +120,21 @@ Great for gluing programs together
 - `zsh`, `fish`
 
 
-## Example bash script
+## time
+
+Time how long it takes a program to execute
 
 ```bash
-for i in $(ls)
-	do
-	if [ "$i" != "prof" ]; then
-		cd $i
-		hg pull
-		cd ..
-	fi
-done
+$ time tar -czf foobar file1.c file2.c
+0.01s user 0.00s system 0% cpu 4.656 total
 ```
+
+
+## timeout
+
+Kill a program after a timeout
+
+- `timeout 10 ./script.sh`
 
 
 ## bats
@@ -125,85 +151,56 @@ Unit testing for CLI Applications
 
 ```bash
 @test "Set example code matches Sample Output" {
-	run ./set.exe < set.in
+	run timeout 10 ./set < set.in
 	[ "$status" -eq 0 ]
 	[ "$output" = "$(cat set.out)" ]
 }
 ```
 
 
-## cron
+## Detailed Example
 
-Running jobs at fixed times
+```bash
+@test "Tests using edit distance" {
+	run timeout 10 ./strings_writer < test.in
+	[ "$status" -eq 0 ]
+	run editdistance "$output" "$(cat expected.out)"
+	[ "$status" -eq 0 ]
+	[ "$output" -lt 5 ]
+}
+```
 
-- On most modern Linux systems it is replaced by systemd
-- `crontab -e` edit user crontab
-- persistent crontab; system dependent location
-- *warning* cron ignores *all* environment variables
-- `anacron` and `systemd` timers
+
+## Testing a student's work
+
+```bash
+#!/bin/bash
+TESTS=$PWD
+OUTPUT=$PWD/output
+pushd assignments/asg_name
+for dir in *
+do
+	if [ -d "$dir" ];then
+		mkdir -p $OUTPUT/"$dir"
+		pushd $dir
+		timeout 10 make > $OUTPUT/$dir/output-make.txt
+		timeout 10 $TESTS/test1.bats &> $OUTPUT/$dir/output-1.txt
+		timeout 10 $TESTS/test2.bats &> $OUTPUT/$dir/output-2.txt
+		popd
+	fi
+done
+```
 
 
-## Example crontab
+## Cron
 
     PATH=/usr/bin
     SHELL=/bin/bash
     MAILTO=acm
     # minute hour dayOfMonth month dayOfWeek cmd
-    0 0 0 * * echo "Cron Example"
-
-
-## hg
-
-Source Control System
-
-- Configure ssh access to avoid passwords
-- `hg clone` clone a repository for the first time
-- `hg incomming` see if there are updates without pulling them
-- `hg pull -u` update to the latest submission
-
-
-## time
-
-Time how long it takes a program to execute
-
-- `time tar -czf foobar`
-
-
-## timeout
-
-Kill a program after a timeout
-
-- `timeout 10 ./script.sh`
-
-
-
-## Examples of Automation
-
-
-## Cloning Repositories
-
-	hg clone ssh://handin@handin.cs.clemson.edu/semester_name/course_name 
-	pushd course_name
-	./update
-
-
-## Testing a student's work
-
-	#!/bin/bash
-	TESTS=$PWD
-	OUTPUT=$PWD/output
-	pushd assignments/asg_name
-	for dir in *
-	do
-		if [ -d "$dir" ];then
-			mkdir -p $OUTPUT/"$dir"
-			pushd $dir
-			timeout 10 make > $OUTPUT/$dir/output-make.txt
-			timeout 10 $TESTS/test1.sh &> $OUTPUT/$dir/output-1.txt
-			timeout 10 $TESTS/test2.sh &> $OUTPUT/$dir/output-2.txt
-			popd
-		fi
-	done
+    0 0 0 * * echo "Monthly task"
+    0 16 * * * echo "Daily at 5pm"
+    0 11 * * 1 echo "Every Monday at noon"
 
 
 ## Emailing Results
@@ -227,13 +224,14 @@ Then test with sample solution
 ## Thinking bigger: a Case Study
 
 
-## What is it, and what does it do?
+## CPSC 3220
 
-- Autograder used in CPSC 322
-- Written in Python
-- Downloads student submissions
-- Can award partial credit
-- Emails students their results
+- Set of public and private tests
+- Autograder run once a day at noon
+- Students emailed their results
+
+
+## Demo
 
 
 ## How does it help students?
@@ -241,19 +239,14 @@ Then test with sample solution
 - Faster feedback
 
 
-## How does it help Dr. Sorber?
+## How does it help You?
 
 - Saves time in grading
-- Statistics regarding his experience
+- Students start earlier and do better
+- Saves you defensive programming
 
 
-## How does it work?
-
-- Downloads projects with `hg`
-- Tests student code with `python`
-- Emails results to students via `mail`
-- Saves a json file with results for grade book
-
+# Common Objections
 
 
 ## The Costs of Automation
@@ -273,13 +266,13 @@ Then test with sample solution
 source: xkcd
 
 
-
 ## A Word on Security
 
 - The risk isn't much higher
 	-  Unless you currently carefully audit every line of code
 - Tools such as systrace, containers, vms can improve security.
 - Treat violations as Academic Integrity Issues.
+
 
 
 ## Wrap-Up
@@ -297,12 +290,12 @@ source: xkcd
   - UNIX `man` pages - most commands have a `man` page
   - [Grymoire][1] - great scripting resource
   - [Archwiki][2] - great command resource
-- Dr. Sorber's [Auto-grader][3]
+- My [Autograder] [3]
 - [USACO][4], [OpenKatis][5]
 
 [1]: http://www.grymoire.com/
 [2]: https://wiki.archlinux.org/index.php/Main_Page
-[3]: http://buffet.cs.clemson.edu
+[3]: https://github.com/robertu94/autograder
 [4]: http://www.usaco.org/
 [5]: https://open.kattis.com/
 

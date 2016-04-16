@@ -33,7 +33,7 @@ Robert Underwood - ACM Vice President
 - We want to make the School of Computing a better place
 
 
-## How we can help your students?
+## How can we help your students?
 
 - We teach introductory topics like Linux and Git
 - We bring in companies in to present technical topics
@@ -91,7 +91,7 @@ Source Control System
 
 - Configure ssh access to avoid passwords
 - `hg clone` clone a repository for the first time
-- `hg incomming` check for updates without pulling them
+- `hg incoming` check for updates without pulling them
 - `hg pull -u` update to the latest submission
 
 

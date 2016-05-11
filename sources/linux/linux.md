@@ -31,98 +31,105 @@ Marshall Clyburn - ACM President
 ## Linux: A Short History
 
 - Created in 1991 by **Linus Torvalds**
-- Written in C and Assembly
+- Written in C and Assembly Languages
 - Uses a *Unix-like* file structure (more on that later)
-- Kernel is still being maintained by Torvalds & open source
-    contributors
-- You could contribute if you wanted!
+- Kernel is still being maintained by Torvalds et al
+	- You could contribute if you wanted!
 
 
 ## What's a Distribution?
 
-- A "flavor" of Linux with small differences from the others
-- **All** have many similarities
+- A "flavor" of Linux with small differences
 - Might differ in...
-    - *Desktop Environment*, the set of programs that handle... the
-        desktop
-        - Examples are **Gnome** and **KDE**
-    - *Package manager*
-    - Default *applications*
-    - Behind-the-scenes *settings*
+    - *Desktop Environment* - controls windows
+        - Examples are **Mate**, **Gnome**, and **KDE**
+    - *Package manager*  - install and update software
+    - Behind-the-scenes *applications* and *settings*
+    - Default *applications* 
 
 
 ## Common Distributions
 
-- Some common distributions are Ubuntu (and children Xubuntu,
-    Kubuntu), Fedora, Debian, and Arch Linux (not for the faint of
-    heart) -- you configure *everything*
+- **Debian based**: uses the DEB package system
+	- Ubuntu (Xubuntu, Kubuntu, Ubuntu Mate)
+	- Elementary OS, Linux Mint, et al
+- **RedHat based**: uses the RPM package system
+	- Fedora, CentOS, Scientific Linux
+
+
+## Common Distributions
+- **OpenSUSE**: heavy focus on OS innovation
+- **Source based**: focus on customization
+	- Gentoo, ArchLinux
 
 
 ## Big Names in \*nix
 
-- **Linus Torvalds** - creator of Linux, *extremely passionate*.
-- GNU Project - "GNU's Not Unix", connected to open source software
-    licensing (like the GNU Public License, or GPL)
-- Greg Kroah-Hartman: Linux Kernel maintainer and all around awesome
-    dude.
+- **Linus Torvalds**:  creator of Linux,
+- **Greg Kroah-Hartman**: stable branch maintainer
+- **Richard Stalmin**: founder of GNU
+- **GNU Project**: "GNU's Not Unix", 
+	- leader in Open Source Software Licensing
+	- Wrote GNU Public License (GPL)
 
 
 ## "Kernel" and Other Scary Words
 
-- **Kernel** is the part of Linux that interacts with your PC's
-    hardware.
-- **Shell** refers to the program that handles your terminal
-    environment with things like the *prompt* and coloring.
-- **Bash** is the default shell.
+- **Kernel**: part of Linux that interacts with hardware
+- **Shell**: terminal-based control application
+	- manipulate anything on the system 
+	- starts programs
+- **Bash**: is the most common shell
 
 
 ## "Kernel" and Other Scary Words
 
-- **Grub** is a common Linux *boot manager* that remembers how to get
-    from turning your computer on into the OS.
-- **PATH** is an *environment variable* that remembers where to look
-    for executables when you type one in the terminal
+- **Environment Variables**: variable that controls program behavior
+- **PATH**: where to the shell searches for executables
+- **EDITOR**: what editor to use when needed
+- **HOME** where your files are kept
 
 
 ## "Kernel" and Other Scary Words
 
-- **Version control systems** like **Git**, **SVN**, and **Mercurial**
-    allow you to easily implement histories of a project. Linux uses
-    Git!
-    - Web handin uses Mercurial as a backend and provides a tutorial
-        for connecting to Handin on your machine
-- **`make` and `Makefile`s** are a *build system* that allow you to
-    define rules for running multiple commands at once. Very useful for
-    compiling code.
+- **Version control systems**: track history of code
+	- Common VCSs include `git`, `mecurial`, and `svn`
+    - Web handin uses `mercurial` as a backend 
+	- See our seminars on `git` or projects for more
+- `make` and `Makefile`: a tool for installing software
 
 
 ## "Building from Source"
 
 - When you can't get a pre-compiled executable
-- Download the source code and run...
+- Download the source code
+- Read the README file, then often run
 - `./configure`
 - `make`
 - `sudo make install`
-- Didn't work? Read README
 
 
 ## Packaging systems
 
-- Easy way to install many applications pre-configured for your OS
-- Different distributions have their own **Package Managers**
-    - All package managers need to be run using `sudo`
-    - `apt-get` - used on Debian based system, including Ubuntu.
-        - `apt-get update` - update metadata
-        - `apt-cache search <package>` - find package
-        - `apt-get install <package>` - install package
-        - `apt-get dist-upgrade` - update all packages
+- Easy way to install many applications
+- Most distributions have **Package Managers**
+    - package managers need to be run using `sudo`
+
+
+## APT
+
+- `apt` - used on Debian based systems, including Ubuntu.
+	- `apt update` - update metadata
+	- `apt search <package>` - find package
+	- `apt install <package>` - install package
+	- `apt upgrade` - update all packages
 
 
 ## Other Packaging systems
 
-- `dnf` - used on Red Hat based system, including Fedora
-- `pacman` - used on Arch Linux
-- `rpm` - Legacy back end that is compatible with yum
+- `dnf`: installed on Fedora
+- `rpm`: backend for yum, dnf, et al
+- `pacman`: used on Arch Linux
 
 
 
@@ -134,19 +141,23 @@ Marshall Clyburn - ACM President
 - Based on *one* root directory, not drives like C: or D:
 - Physical devices (drives, output) and important folders are
     *mounted* to subdirectories of `/`
-    - `/home` - where user's files normally live
-    - `/dev` - device nodes. Don't mess with things here.
-    - `/mnt` - where you can mount things like USB drives.
-    - `/usr` - where system libraries and the like are.
-    - `/bin` - stores system executables
 
-    **Some distros are a little different in how they manage these folders.**
+**Some distros are a little different in how they manage these folders**
+
+
+## Basic Hierarchy
+
+- `/home`: where user's files normally live
+- `/bin`: stores system executables
+- `/usr`: where system libraries and the like are
+- `/dev`: device nodes; Don't mess with things here
+- `/mnt`: where you can mount things like USB drives
 
 
 ## Everything is a File
 
-- Linux sees every object as a subclass of a file.
-- Folders, links, output devices, executables are all "files"!
+- Linux sees every object as a subclass of a file
+- Folders, links, devices, and executables are "files"!
 
 
 ## Where are my .exes?
@@ -157,7 +168,7 @@ Marshall Clyburn - ACM President
 - Files starting with a dot like `.bashrc` are usually *hidden* from
     listings
 - Running a command like `sl` is really just running an executable
-    file within the PATH
+    file within the `PATH`
 
 
 
@@ -166,7 +177,7 @@ Marshall Clyburn - ACM President
 
 ## echo "navigation commands"
 
-- Stuck? `Ctrl+c` force quits the running program.
+- Stuck? `Ctrl+c` often quits the running program
 - `pwd` lists your current directory
 - `cd directory` moves the terminal to `directory`
 - `ls` lists files and folders in the current directory
@@ -176,30 +187,31 @@ Marshall Clyburn - ACM President
 
 ## echo "file commands"
 
-### THERE IS NO TRASHCAN. DELETION IS PERMANENT.
+*** THERE IS NO TRASHCAN! ***
 
-- `mv orig.file new.file` moves `orig.file` to `new.file`
-    - Use this for moving and **renaming**!
-- `cp orig.file clone.file` copies `orig.file` to `clone.file`
-- `rm file` removes a file
-    - `rm -r directory` deletes a directory
+```bash
+mv orig.file new.file  # move a file
+cp orig.file copy.file # copy a file
+rm orig.file           # remove a file
+rm -r directory        # remove a directory and contents
+```
 
 
 ## --Flags?! : Command Structure
 
 - Generally
-    `command -one-letter-flag --longer-flag parameter`
-    `[optional parameter] parameter-list...`
-- Some flags need their own value arguments after them
+    `progname -one-letter-flags --longer-flag parameter`
+    `[optional parameters]  parameter-list...`
+- Some flags need arguments after them
     - `ping -c 12` OR `ping --count=12`
 
 
 ## Common Flags
 
-- Structure varies by program: try `progname --help` or `-h` 
+- Structure varies by program 
+- for help try: `progname --help` or `-h` 
     - Sometimes simpler than `man progname`
-- Many commands use `--verbose` or `-v` to print *more* useful
-    information. Verbosity is good!
+- for output try: `progname --verbose` or `-v` 
 
 
 ## Terminal Symbols & Shorthand
@@ -219,59 +231,57 @@ Marshall Clyburn - ACM President
     - `\` (space) inserts a space into one argument (otherwise the
         argument will break)
     - `\\` actually inserts a backslash
-    - `$(command)` or `command` inserts the output of `command` into
-    - `command&` will run `command` in the background
+
+
+## Terminal Symbols & Shorthand
+
+- `$(command)` or \`command\` inserts the output of `command` into
+- `command &` will run `command` in the background
 
 
 ## Messing with Output
 
 - Any text output you see in the terminal comes from **standard out**
-    (the same stream as **cout** in C++ and **printf()** in C)
-    - `echo input` - print `input` to standard out
-    - `cat input.file` - print contents of `file` to the terminal
+	- Think **cout** in C++ and **printf()** in C
+- `echo input` - print `input` to standard out
+- `cat input.file` - print `file` to the terminal
 
 
 ## Messing with Output
 
 - Many commands like `grep` and `less` read from **standard in**
-    (**cin** in C++, what **scanf()** reads from in C) if no other args
-    are specified
-    - `grep pattern input.file` prints lines from `input.file` that
-        match/contain the search pattern (could be as simple as one
-        word)
-    - `less input.file` allows you to read up and down through a large
-        chunk of data
+    - Think **cin** in C++ and  **scanf()** reads from in C
+- `grep pattern input.file`: filters a pattern
+- `less input.file`: buffers output
 
 
 ## Piping and Redirection
 
-- **Piping** with `command-a | command-b` connects the *standard
-    output* of `command-a` to *standard input* of `command-b`, for
-    chaining commands
-    - `command-a | less` pipes `command-a`'s output into less for easy
-        reading
-- **Redirection** handles using file contents for standard in / out
-- `progname > output.file` overwrites `output.file` with `progname`'s
-    output
+- **Piping** `command-a | command-b` 
+	- connects the *standard output* of `command-a` 
+	- to *standard input* of `command-b`
+	- useful for chaining commands
+    - Ex: `command-a | less` easy reading
 
 
 ## Redirection
 
-- `>>` *appends to* `output.file` with `progname`'s output
-- `&>` overwrites `output.file` with `progname`'s *error output*
-- `&>>` *appends to* `output.file` with `progname`'s *error
-    output*
+- **Redirection** reassign standard in/out/error to files
+- `progname > output.file` overwrites `output.file` with output
+- `>>` *appends to* `file` with `progname`'s output
+- `&>` overwrites `file` with `progname`'s *error output*
+- `&>>` *appends to* `file` with `progname`'s *error output*
 - `progname < input.file` uses `input.file`'s content as input for
     `progname`
 
 
 ## Shell History
 
-### "How did I run that again?"
+*** How did I run that again? ***
 
 - Press the up key to cycle through your previously entered commands
 - `history` - print previous commands
-- Try it with grep -- `history | grep ls`
+- Search it with grep -- `history | grep ls`
 - `ctrl-r` for a history search
 
 
@@ -290,11 +300,15 @@ Marshall Clyburn - ACM President
 
 - `man` - summons an *extensive* manual page for about anything
     - `man stdio.h`, `man grep`, `man man`
-- `sl` summons a steam locomotive!
 - `touch name.file` creates an empty `name.file` if none exists
+- `find` locate a file on your computer
+
+
+## `man` and Other Awesome Commands
+
 - `vim [edit.file]` awesome text editor with steep learning curve
-- `nano [edit.file]` opens a simple editor
-- `curl -O [URL]` copies a file from the web
+- `emacs -nw [edit.file]` great OS needing a good editor
+- `curl -LO [URL]` copies a file from the web
 
 
 ## `man` and Other Awesome Commands
@@ -326,16 +340,16 @@ Marshall Clyburn - ACM President
 - *Users* are unique accounts
 - *Root* is the **superuser** and can do *anything*.
     - **DON'T TRY TO USE ROOT ON THE CU MACHINES**.
-    - Run one command as root with `sudo <command>` and temporarily
-        login with `sudo su`
+    - Run a command as root with `sudo <command>` 
+	- temporarily login as root with `sudo --login`
 
 
 ## Users, Root and Groups
 
 - Users in the same *Groups* share permissions pertaining to that
     group
-    - E.g. users in `sudoers` can use `sudo` (the admin group might be
-        different on other distros)
+    - Ex:users in `sudoers` can use `sudo` 
+	- the admin group might be different
     - Users can be in multiple groups
 - `man chmod` and `man chgrp` for more info on permissions and groups
 
@@ -360,17 +374,23 @@ Marshall Clyburn - ACM President
 
 ## Windows: Cygwin?
 
-### **Bad Idea.**
+*** Bad Idea ***
 
 
+## Ubuntu for Windows?
+
+*** Better Idea ***
 
 
-# Wrap-up
+## Dual-boot or VM
+
+*** Best Idea ***
+
 
 
 ## Final warnings
 
-### NEVER RUN A RANDOM COMMAND FROM THE INTERNET
+*** NEVER RUN A RANDOM COMMAND FROM THE INTERNET ***
 
 - **DON'T CHEAT**
     - Professors use advanced software that checks the algorithms your
@@ -388,7 +408,7 @@ Marshall Clyburn - ACM President
 - Keeps hourly, nightly, and weekly backups of files in `~`
 - Especially useful when you accidentally overwrite a project at 2 am
 
-### SNAPSHOTS ARE UNIQUE TO CLEMSON. DON'T RELY ON IT!
+*** SNAPSHOTS ARE UNIQUE TO CLEMSON. DON'T RELY ON IT! ***
 
 
 ## Your Free Clemson Web Hosting
@@ -402,6 +422,10 @@ Marshall Clyburn - ACM President
     - `chmod a+g [sub-directories]`
 
 
+
+# Wrap up 
+
+
 ## Further resources
 
 - [Cheetsheet](http://www.cs.clemson.edu/help/linux-workshop/soc_linux_cheatsheet.pdf) of commands
@@ -409,7 +433,6 @@ Marshall Clyburn - ACM President
     [ExplainShell.com](http://explainshell.com/) to see what it does
 - We're on [Steam](http://steamcommunity.com/groups/clemsonacm) and freenode at `#clemsonacm`
 - Admins work in the main hallway
-
 
 
 ## Questions

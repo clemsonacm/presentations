@@ -16,11 +16,11 @@ Marshall Clyburn - ACM President
 ## Coming up
 
 1. What's up with Linux?
-2. The linux file system
+2. The Linux file system
 3. Terminal Power
 4. Getting owned by Permissions
 5. Working from Other Machines
-6. Your free webhosting at people.cs.clemson.edu
+6. Your free web hosting at people.cs.clemson.edu
 7. Wrap-up
 
 
@@ -67,7 +67,7 @@ Marshall Clyburn - ACM President
 
 - **Linus Torvalds**:  creator of Linux,
 - **Greg Kroah-Hartman**: stable branch maintainer
-- **Richard Stalmin**: founder of GNU
+- **Richard Stallman**: founder of GNU
 - **GNU Project**: "GNU's Not Unix", 
 	- leader in Open Source Software Licensing
 	- Wrote GNU Public License (GPL)
@@ -93,8 +93,8 @@ Marshall Clyburn - ACM President
 ## "Kernel" and Other Scary Words
 
 - **Version control systems**: track history of code
-	- Common VCSs include `git`, `mecurial`, and `svn`
-    - Web handin uses `mercurial` as a backend 
+	- Common VCSs include `git`, `mercurial`, and `svn`
+    - Web handin uses `mercurial` as a back end 
 	- See our seminars on `git` or projects for more
 - `make` and `Makefile`: a tool for installing software
 
@@ -187,7 +187,7 @@ Marshall Clyburn - ACM President
 
 ## echo "file commands"
 
-*** THERE IS NO TRASHCAN! ***
+*** THERE IS NO TRASH CAN! ***
 
 ```bash
 mv orig.file new.file  # move a file
@@ -282,7 +282,7 @@ rm -r directory        # remove a directory and contents
 - Press the up key to cycle through your previously entered commands
 - `history` - print previous commands
 - Search it with grep -- `history | grep ls`
-- `ctrl-r` for a history search
+- `Ctrl-r` for a history search
 
 
 ## Shell configuration
@@ -313,7 +313,7 @@ rm -r directory        # remove a directory and contents
 
 ## `man` and Other Awesome Commands
 
-- `tar` - manage tarball (.tar) and tarball + gzipped (.tgz, .tar.gz)
+- `tar` - manage tar ball (.tar) and tar ball + gzipped (.tgz, .tar.gz)
     archives
     - `tar -xzf` (e**x**tract **z**e **f**iles!!) `<archive>`
         - `tar -xf` for just `.tar`
@@ -324,7 +324,7 @@ rm -r directory        # remove a directory and contents
 
 ## Shell Scripts
 
-- put commands into a file to run them all at once repeatidly
+- put commands into a file to run them all at once repeatedly
 - add `#!/bin/bash` as the first line
 - one command per line
 - `chmod u+x script.sh`

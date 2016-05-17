@@ -183,13 +183,13 @@ for key in facts:
 +	Written in Python 2.7.X but moving to 3.X
 +	Agentless architecture
 	+	Requires only Python 2.7 and OpenSSH Server
-+	**In Order** processing with dependancies
++	**In Order** processing with dependencies
 +	Configured in `yaml` and `jinja`
 
 
-### Ansible Specs - Basics
+### Ansible Play Books - Basics
 
-```ansible
+```Ansible
 ---
 -   hosts: all
 	tasks:
@@ -204,15 +204,15 @@ for key in facts:
 ```
 
 
-### Ansible Playbooks - Packages
+### Ansible Play Books - Packages
 
 ```ansible
 - hosts: all
   tasks:
-	- name: install vim debian
+	- name: install vim Debian
 	  package: name=vim-gtk3
 	  when: ansible_os_family == 'Debian'
-	- name: install vim redhat
+	- name: install vim RedHat
 	  package: name=vim-X11
 	  when: ansible_os_family == 'RedHat'
 	- name: install vim other
@@ -242,7 +242,7 @@ gvim: vim-gtk3
 ```
 
 
-### Ansible Specs - Services
+### Ansible Play Books - Services
 
 ```ansible
 # in main.yaml
@@ -287,7 +287,7 @@ print(json.dumps(facts))
 
 +	`mymodule`
 	+	`tasks` - ansible playbooks to run
-	+	`handlers` - ansible handlers
+	+	`handlers` - Ansible handlers
 	+	`library` - external code to run
 	+	`templates` - templated files
 	+	`files` - static files
@@ -299,8 +299,8 @@ print(json.dumps(facts))
 ## The Good
 
 -   Agentless
--   Documetation
--   Simple, Consise
+-   Documentation
+-   Simple, Concise
 -   Python
 -   Ansible Vault
 -   GPL Licensed
@@ -310,7 +310,7 @@ print(json.dumps(facts))
 
 -   Slower (but not much)
 -   Regressions in 2.0
--   Very opinioned
+-   Very opinionated
 -   Less featureful
 
 
@@ -319,7 +319,7 @@ print(json.dumps(facts))
 
 +	Written in python 2.7.X but moving to 3.X
 +	Mixed architecture
-	+	Requires python 2.7 and OpenSSH Server for agentless
+	+	Requires python 2.7 and OpenSSH Server for Agentless
 +	**Computed Ordering**
 +	Configured in `yaml` with `jinja` or `python`
 

@@ -428,6 +428,7 @@ rm -r directory        # remove a directory and contents
 
 ## Further resources
 
+- [Linux Journey](http://linuxjourney.com/)
 - [Cheetsheet](http://www.cs.clemson.edu/help/linux-workshop/soc_linux_cheatsheet.pdf) of commands
 - Plug a long command into
     [ExplainShell.com](http://explainshell.com/) to see what it does

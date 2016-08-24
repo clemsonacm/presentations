@@ -6,11 +6,9 @@
 
 We're on Freenode! Join `#clemsonacm` on chat.freenode.net!
 
-### Speakers:
+### Speaker:
 
 Robert Underwood - ACM Vice President
-
-Austin Anderson - Former ACM President
 
 
 ## Coming Up

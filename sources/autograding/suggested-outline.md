@@ -1,0 +1,20 @@
+- Focus: introduce the idea that if something is being done many times on the computer over and over again, it can likely be automated: and is often beneficial to do so.
+- Why would you want to automate your work?
+- What sorts of things can you automate?
+- When is automation and scripting applicable?
+  - When is it not?
+- What tools should I use?
+- Examples (+ pseudocode?)
+  - Testing a student's work (bats, python)
+  - Testing /every/ student's work... and emailing results
+  - Generating large test data sets for a project
+- Thinking bigger: a case study (Dr. Sorber's autograder)
+  - What is it, and what does it do?
+  - How does it help students?
+  - How does it help Dr. Sorber?
+  - How does it work?
+- The dangers of automation
+  - Certain mess-ups can be *catastrophic* (lose projects, wrong grades, accidentally share information that shouldn't be)
+  - Writing the script can take time (relevant XKCD)
+    - But you'll probably use it again
+  - https://xkcd.com/1205/

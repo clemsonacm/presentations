@@ -189,7 +189,7 @@ for key in facts:
 
 ### Ansible Play Books - Basics
 
-```Ansible
+```yaml
 ---
 -   hosts: all
 	tasks:
@@ -206,7 +206,7 @@ for key in facts:
 
 ### Ansible Play Books - Packages
 
-```ansible
+```yaml
 - hosts: all
   tasks:
 	- name: install vim Debian
@@ -223,7 +223,7 @@ for key in facts:
 
 ### Ansible Specs - Packages Better
 
-```ansible
+```yaml
 #in main.yaml
 ---
 - hosts: all
@@ -244,7 +244,7 @@ gvim: vim-gtk3
 
 ### Ansible Play Books - Services
 
-```ansible
+```yaml
 # in main.yaml
 - hosts: all
   tasks:
@@ -326,7 +326,7 @@ print(json.dumps(facts))
 
 ## Salt Basics
 
-```sls
+```yaml
 acm:
 	group.present
 {% for user in ['acm', 'foo', 'bar'] %}
@@ -341,7 +341,7 @@ users:
 
 ## Salt Packages
 
-```sls
+```yaml
 {% if grains['os_family'] == 'RedHat' %}
 vim-X11:
 {% elif grains['os_family'] == 'Debian' %}
@@ -353,7 +353,7 @@ vim-gtk3:
 
 ## Salt Packages - Better
 
-```sls
+```yaml
 #in sls file
 {{ pillar['gvim'] }}:
 	pkg.installed
@@ -362,7 +362,7 @@ vim-gtk3:
 
 ## Salt Packages - Better
 
-```sls
+```yaml
 #in pillar/top.sls
 'base':
   '*':
@@ -385,7 +385,7 @@ gvim: vim-gtk3
 
 ## Salt Services
 
-```sls
+```yaml
 /etc/ssh/sshd_config:
 	file.managed:
 	  - source: salt://sshd/sshd_conf

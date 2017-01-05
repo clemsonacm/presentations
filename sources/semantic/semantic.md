@@ -22,10 +22,8 @@ Robert Underwood
 
 ## Bad code is a problem
 
-+	Bad code takes longer to:
-	1.	Understand
-	2.	Edit
-	3.	Get right
++	Bad code takes longer to: understand, edit, and get right
++	Time is the most valuable resource you have
 
 
 ## What is bad code?
@@ -83,6 +81,32 @@ Martin Fowler
 	1.	Is more readable
 	2.	Provides new features
 	3.	Builds on design knowledge
+
+
+## Design Patterns
+
+>   [Patterns are] ... communicating objects that are customized
+>   to solve a general design problem in a particular context 
+
+Gang Of Four
+
+"Design Patterns"
+
+
+## Design Patterns
+
++	Have a: name, problem, solution, and consequences
++	Originally for object oriented programming
++	Used effectively in other paradigm
++	Refactorings are almost design patterns
+
+
+## Why Patterns?
+
++	Used correctly, patterns:
+	+	Solve complex problems
+	+	Are easier to understand
+	+	Save time in design and testing
 
 
 ## Let's Get Practical

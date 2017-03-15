@@ -20,6 +20,7 @@ Robert Underwood
 3.	Want to write better code
 
 
+
 ## Bad code is a problem
 
 +	Bad code takes longer to: understand, edit, and get right
@@ -56,6 +57,7 @@ Robert Underwood
 </div>
 
 
+
 ## How do we fix it?
 
 1.	Do it right the first time <!-- .element:  class="fragment"-->
@@ -70,43 +72,7 @@ Robert Underwood
 > Refactoring is the process of changing a software system in such a way that it does not alter the
 > external behavior of the code yet improves its internal structure.
 
-Martin Fowler
-
-"Refactoring: Improving the Design of Existing Code"
-
-
-## What do we refactor to?
-
-+	Code that:
-	1.	Is more readable
-	2.	Provides new features
-	3.	Builds on design knowledge
-
-
-## Design Patterns
-
->   [Patterns are] ... communicating objects that are customized
->   to solve a general design problem in a particular context 
-
-Gang Of Four
-
-"Design Patterns"
-
-
-## Design Patterns
-
-+	Have a: name, problem, solution, and consequences
-+	Originally for object oriented programming
-+	Used effectively in other paradigm
-+	Refactorings are almost design patterns
-
-
-## Why Patterns?
-
-+	Used correctly, patterns:
-	+	Solve complex problems
-	+	Are easier to understand
-	+	Save time in design and testing
+<cite>Martin Fowler "Refactoring: Improving the Design of Existing Code"</cite>
 
 
 ## Let's Get Practical
@@ -115,21 +81,20 @@ And go to some case studies
 
 
 
-## Further Resources
-
-+   Martin Fowler
-	+   [Refactoring: Improving the Design of Existing Code](refactoring.com)
-	+   [Personal Site](martinfowler.com)
-+	[Design Patterns](https://en.wikipedia.org/wiki/Design_Patterns) by the Gang of Four 
-+	[Refactoring to Patterns](https://www.industriallogic.com/xp/refactoring/) by Joshua Kerievsky
-+	[Functional Programming](http://fsharpforfunandprofit.com/fppatterns/) by Scott Wlaschin
-
-
 ## Tooling to make it easier
 
 +   LLVM's libtooling (C/C++)
 +   Eclipse and Eclim (Java et al)
 +   Pycharm, Rope, et al (Python)
+
+
+## Further Resources
+
++   Martin Fowler
+	+   [Refactoring: Improving the Design of Existing Code](refactoring.com)
+	+   [Personal Site](martinfowler.com)
++	[Refactoring to Patterns](https://www.industriallogic.com/xp/refactoring/) by Joshua Kerievsky
++	[Functional Programming](http://fsharpforfunandprofit.com/fppatterns/) by Scott Wlaschin
 
 
 ## Questions

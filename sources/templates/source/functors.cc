@@ -2,6 +2,10 @@
 #include <functional>
 #include <vector>
 
+#ifdef __cpp_generic_lambdas
+#define CPP_14
+#endif
+
 void aside_on_member_fn();
 
 //example of generic function using predicates
@@ -108,14 +112,16 @@ void use_functors()
 		use_functor("lambda", print_lambda);
 	}
 
+#ifdef CPP_14
 	//or generic lambdas in c++14
 	{
-		auto auto_print_lambda = [](auto const & val) -> decltype(val) const&{
+		auto auto_print_lambda = [](auto const& val) -> decltype(val){
 			std::cout << val << " ";
 			return val;
 		};
 		use_functor("generic lambda", auto_print_lambda);
 	}
+#endif
 
 	//or lambda's to member functions (preferred method to call member functions)
 	{

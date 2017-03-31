@@ -49,6 +49,7 @@ Here be dragons!
 
 +	Functions have type deduction
 +	Classes/Structs have partial specialization
++	At least for now...
 
 
 ###	Template Methods
@@ -87,7 +88,9 @@ Here be dragons!
 
 ### Trait Specialization and Policies
 
-+	Select an algorithm through reflection on types
++	Select an algorithm/behavior through:
+	+	reflection on types
+	+	template arguments
 +	Implementations vary
 	+	SFINAE-based -- more flexible, harder to implement
 	+	Specialization-base -- less flexible, almost trivial
@@ -101,9 +104,10 @@ Here be dragons!
 
 ###	Tuples
 
-+	structs of a specified type
-+	can be passed as function arguments
-+	can be used to extract to variables
++	collections of types
++	very similar to a struct
++	can be expanded and passed as function arguments
++	can be used to extract variables via `std::tie`
 
 
 ###	Functors
@@ -120,8 +124,14 @@ Here be dragons!
 +	Iterator Generics
 +	Curiously Recurring Template Pattern
 +	Parameterized Type Attributes
++	Generic implementations of Design Patterns
 
 
+## Further Reading
+
++	Many of concepts are found
+	+	C++ Templates: The Complete Guide
+	+	Modern C++ Design
 
 ## Questions
 

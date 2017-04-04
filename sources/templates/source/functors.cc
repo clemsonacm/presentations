@@ -1,3 +1,4 @@
+//{{{includes
 #include <iostream>
 #include <functional>
 #include <vector>
@@ -5,10 +6,8 @@
 #ifdef __cpp_generic_lambdas
 #define CPP_14
 #endif
-
-void aside_on_member_fn();
-
-//example of generic function using predicates
+///}}}
+//{{{ example of generic function using predicates
 template <class InputIterator, class UninaryPredicate>
 UninaryPredicate for_each(InputIterator begin, InputIterator end, UninaryPredicate f)
 {
@@ -18,8 +17,8 @@ UninaryPredicate for_each(InputIterator begin, InputIterator end, UninaryPredica
 	}
 	return f;
 }
-
-//helper method
+//}}}
+//{{{ use_functor()
 template <class fn>
 void use_functor(std::string const & name, fn const & function)
 {
@@ -29,7 +28,11 @@ void use_functor(std::string const & name, fn const & function)
 	for_each(v.begin(), v.end(), function);
 	std::cout << std::endl;
 }
-
+//}}}
+//{{{ implementations
+//example generic function
+template <class T>
+T const & print(T const & val) { std::cout << val << " "; return val;}
 
 //functor struct, classes work just as well but have more overhead in this case
 template <class T>
@@ -37,12 +40,6 @@ struct functor
 {
 	T const& operator()(T const& val) { std::cout << val << " "; return val;}
 };
-
-
-
-//example generic function
-template <class T>
-T const & print(T const & val) { std::cout << val << " "; return val;}
 
 template<class T>
 class Printer
@@ -55,20 +52,14 @@ class Printer
 	do { \
 		std::cout << (x) << " ";  \
 		}while(0) 
+//}}}
 
 
 void use_functors()
 {
 
-
 	//you can't pass a macro
 	//use_functor("macro", printM);
-
-	//You can print with structs
-	{
-		functor<int> print_int_struct;
-		use_functor("struct", print_int_struct);
-	}
 
 	//With function pointers
 	{
@@ -88,14 +79,20 @@ void use_functors()
 	//but not
 	//use_functor("func reference", print);
 	
+	//You can print with structs
+	{
+		functor<int> print_int_struct;
+		use_functor("struct", print_int_struct);
+	}
+
 	//Or with free member functions (std::bind is very slow)
 	{
-		//note the use of std::bind is required
+		//{{{note the use of std::bind is required
 		//&Printer<int>::print is not unitary, but binary
 		//if it was free its signature would be:
 		//
 		//    int const& (*print)(Printer<int>*, int const&)
-		//
+		//}}}
 		using namespace std::placeholders;
 		const Printer<int> p;
 		auto printMemFn = std::mem_fn(&Printer<int>::print);
@@ -133,9 +130,11 @@ void use_functors()
 	}
 }
 
-
+//{{{main
 int main(int argc, char *argv[])
 {
 	use_functors();	
 	return 0;
 }
+//}}}
+// vim: foldmethod=marker

@@ -7,6 +7,7 @@
 #include <type_traits>
 
 
+//{{{ sfinae
 //solution based on macro-free version in http://stackoverflow.com/a/9154394
 namespace detail {
 	template<class>
@@ -40,7 +41,8 @@ struct is_iterable
 								  && has_begin<Container>::value  \
 								  && has_end<Container>::value;
 };
-
+//}}}
+//{{{ test_reflection()
 void test_reflection()
 {
 	std::cout << "=====test_component=====" << std::endl;
@@ -61,6 +63,7 @@ void test_reflection()
 	std::cout << is_iterable<std::list<int>>::value << std::endl;
 	std::cout << is_iterable<std::map<int,int>>::value << std::endl;
 }
+//}}}
 
 template <class Container>
 std::enable_if_t<is_iterable<Container>::value, std::ostream&>
@@ -86,6 +89,7 @@ join(Object const& o, std::string const& delim="", std::ostream& out = std::cout
 	return out << o;
 }
 
+//{{{ use_join_method
 void use_join_method()
 {
 	std::cout << "=====use_join=====" << std::endl;
@@ -94,10 +98,13 @@ void use_join_method()
 	join(v, ", ") << std::endl;
 	join(three) << std::endl;
 }
-
+//}}}
+//{{{ main
 int main(int argc, char *argv[])
 {
 	test_reflection();
 	use_join_method();
 	return 0;
 }
+//}}}
+// vim: foldmethod=marker

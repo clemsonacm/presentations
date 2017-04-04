@@ -3,7 +3,8 @@
 #include <iomanip>
 #include <algorithm>
 
-/*ugly hack*/
+/*{{{ ugly hack */
+
 namespace std
 {
 	template <class T>
@@ -12,6 +13,7 @@ namespace std
 		return lhs.real() < rhs.real();
 	}
 }
+/*}}} */
 
 /* types must be equal */
 namespace simple 
@@ -25,9 +27,11 @@ namespace simple
 }
 
 /* types can differ but return type is the first */
+	//{{{ why is this wrong?
+	//answer: Dangling reference
+	//}}}
 namespace argsWrong
 {
-	/* dangeling reference */
 	template <class U, class V>
 	inline U const& max (U const& lhs, V const& rhs)
 	{
@@ -46,8 +50,8 @@ namespace args
 
 namespace rt
 {
-	template <class U, class V, class RT>
-	inline RT const& max(U const& lhs, V const& rhs)
+	template <class RT,class U, class V>
+	inline RT max(U const& lhs, V const& rhs)
 	{
 		return lhs<rhs?rhs:lhs;
 	}
@@ -57,6 +61,7 @@ namespace rt
 #define maxMacro(x,y) (((x)<(y))?(y):(x))
 
 
+/* {{{ operators() */
 void operators()
 {
 	std::cout << "====operators====" << std::endl;
@@ -69,7 +74,9 @@ void operators()
 	std::cout << std::max(c1,c2) << std::endl;
 	std::cout << maxMacro(c1,c2) << std::endl;
 }
+/* }}} */
 
+/* {{{ precision() */
 void percision()
 {
 	std::cout << "====precision====" << std::endl;
@@ -89,8 +96,12 @@ void percision()
 	/*std::cout << argsWrong::max(x,y) << std::endl;*/
 
 	std::cout << args::max(x,y) << std::endl;
-}
 
+	std::cout << rt::max<int>(x,y) << std::endl;
+}
+/* }}} */
+
+/* {{{ promotion */
 void promotion()
 {
 	std::cout << "====promotion====" << std::endl;
@@ -99,9 +110,9 @@ void promotion()
 	std::cout << maxMacro(x,y) << std::endl;
 	std::cout << maxMacro(y,x) << std::endl;
 }
+/* }}} */
 
-
-
+/* {{{ main */
 int main(int argc, char *argv[])
 {
 
@@ -111,3 +122,6 @@ int main(int argc, char *argv[])
 
 	return 0;
 }
+/* }}} main */
+
+// vim: foldmethod=marker

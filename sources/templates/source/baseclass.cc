@@ -4,21 +4,11 @@ class base
 {
 	public:
 	virtual ~base()=default;
-	int getThree() const
-	{
-		return 3;
-	}
-	virtual int getFour() const
-	{
-		return 4;
-	}
+	int getThree() const { return 3; }
+	virtual int getFour() const { return 4; }
 	virtual std::ostream& print(std::ostream&) const=0;
 };
 
-std::ostream& operator<<(std::ostream& out, base const& base)
-{
-	return base.print(out);
-}
 
 template <class T>
 class sub: public base
@@ -35,6 +25,14 @@ class sub: public base
 	
 };
 
+//{{{ operator<<(ostream, base)
+std::ostream& operator<<(std::ostream& out, base const& base)
+{
+	return base.print(out);
+}
+//}}}
+
+//{{{ main
 int main(int argc, char *argv[])
 {
 	sub<int> i(2);
@@ -48,3 +46,6 @@ int main(int argc, char *argv[])
 	std::cout << u << std::endl;
 	return 0;
 }
+//}}}
+
+// vim: foldmethod=marker

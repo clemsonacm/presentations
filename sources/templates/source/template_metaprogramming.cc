@@ -29,6 +29,7 @@ T dot_product(const T* a, const T* b)
 	return DotProduct<N,T>::result(a,b);
 }
 
+//{{{main
 int main(int argc, char *argv[])
 {
 	int  a[] = {1,2,3,4,5};
@@ -36,3 +37,5 @@ int main(int argc, char *argv[])
 	std::cout << dot_product<5>(a,b) << std::endl;
 	return 0;
 }
+//}}}
+// vim: foldmethod=marker

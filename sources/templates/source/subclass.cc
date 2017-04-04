@@ -9,25 +9,14 @@ class base
 	virtual std::ostream& print(std::ostream&) const=0;
 };
 
-std::ostream& operator<<(std::ostream& out, base const& base)
-{
-	return base.print(out);
-}
-
 template <class T>
 class sub: public base
 {
 	public:
 	sub(T t): base(), t(t) {}
 
-	int getThree() const
-	{
-		return 3;
-	}
-	int getFour() const
-	{
-		return 4;
-	}
+	int getThree() const { return 3; }
+	int getFour() const { return 4; }
 	std::ostream& print(std::ostream& out) const
 	{
 		return out << t;
@@ -36,7 +25,13 @@ class sub: public base
 	T t;
 	
 };
-
+//{{{ ostream<<(ostream& out, base)
+std::ostream& operator<<(std::ostream& out, base const& base)
+{
+	return base.print(out);
+}
+//}}}
+//{{{main
 int main(int argc, char *argv[])
 {
 	sub<int> i(2);
@@ -50,3 +45,4 @@ int main(int argc, char *argv[])
 	std::cout << u << std::endl;
 	return 0;
 }
+//}}}

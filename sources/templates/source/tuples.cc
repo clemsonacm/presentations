@@ -1,3 +1,4 @@
+//{{{ includes
 #include <type_traits>
 #include <iostream>
 #include <tuple>
@@ -6,8 +7,8 @@
 #include <experimental/tuple>
 #define CPP_17
 #endif
-
-
+//}}}
+//{{{ tuple printer
 namespace tuple
 {
 	template<class Tuple, std::size_t N>
@@ -38,22 +39,17 @@ namespace tuple
 	}
 }
 
+//convenience method
 template<class... Tuple>
 std::ostream& operator<<(std::ostream& out, std::tuple<Tuple...> const& tuple)
 {
 	return tuple::print(out, tuple);
 }
+//}}}
 
 std::tuple<int,std::string> convert(int i, int j, std::string const& s)
 {
 	return std::make_tuple(i+j,s);
-}
-
-void print_tuple()
-{
-	std::cout << "=====print_tuple=====" << std::endl;
-	auto t = std::make_tuple<int,int,std::string>(1,2,"asdf");
-	std::cout << t << std::endl;
 }
 
 void with_cpp14()
@@ -81,6 +77,15 @@ void with_cpp17()
 }
 #endif
 
+//{{{ driver method
+void print_tuple()
+{
+	std::cout << "=====print_tuple=====" << std::endl;
+	auto t = std::make_tuple<int,int,std::string>(1,2,"asdf");
+	std::cout << t << std::endl;
+}
+//}}}
+//{{{ main
 int main(int argc, char *argv[])
 {
 
@@ -92,3 +97,5 @@ int main(int argc, char *argv[])
 
 	return 0;
 }
+//}}}
+// vim: foldmethod=marker

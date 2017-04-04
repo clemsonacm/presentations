@@ -10,7 +10,7 @@ Robert Underwood
 1.	Why templates?
 2.	Basics
 	1.	Template Methods
-	2.	Template Polymorphism
+	2.	Templates with Polymorphism
 	3.	Classes vs Functions
 3.	Applications
 	1.	Trait Specialization and Policies
@@ -45,6 +45,12 @@ Here be dragons!
 	+	trades code size for binary size (and readability?)
 
 
+###	Template Methods
+
++	Will deduce but not coerce types
++	They can be overloaded
+
+
 ###	Classes vs Functions
 
 +	Functions have type deduction
@@ -52,13 +58,7 @@ Here be dragons!
 +	At least for now...
 
 
-###	Template Methods
-
-+	Will deduce but not coerce types
-+	They can be overloaded
-
-
-###	Template Polymorphism
+###	Templates with Polymorphism
 
 +	If possible,
 	+	Put only template methods in a template class

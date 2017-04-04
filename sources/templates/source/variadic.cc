@@ -1,16 +1,20 @@
+//{{{ includes
 #include <iostream>
 #include <iomanip>
 
 #ifdef __cpp_fold_expressions
 #define CPP_17
 #endif
-//order matters here
+//}}}
+
+// {{{aside: order matters here
 //
 //if we put
 //T sum(T, Ts...)
 //T sum(T) 
 //
 //this code will not compile
+//}}}
 
 
 //primary function for overload resolution
@@ -28,6 +32,7 @@ T sum (T const& first, const Ts&... rest)
 	return first + sum(rest...);
 }
 
+//{{{another example
 template <class T>
 bool all (T const& first)
 {
@@ -39,6 +44,7 @@ bool all (T const& first, Ts const&... rest)
 {
 	return first && all(rest...);
 }
+//}}}
 
 #ifdef CPP_17
 //in c++17
@@ -55,6 +61,7 @@ bool allufr (const Ts&... args)
 }
 #endif
 
+//{{{ main
 int main(int argc, char *argv[])
 {
 	
@@ -69,3 +76,5 @@ int main(int argc, char *argv[])
 #endif
 	return 0;
 }
+// }}}
+// vim: foldmethod=marker

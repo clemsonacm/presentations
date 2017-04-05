@@ -7,3 +7,5 @@ specialization
 template_metaprogramming
 tuples
 variadic
+partial
+policy

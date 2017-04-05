@@ -15,6 +15,9 @@ namespace std
 }
 /*}}} */
 
+/* all of the () are required */
+#define maxMacro(x,y) (((x)<(y))?(y):(x))
+
 /* types must be equal */
 namespace simple 
 {
@@ -50,15 +53,13 @@ namespace args
 
 namespace rt
 {
+	//max<int>(1,1.2)
 	template <class RT,class U, class V>
 	inline RT max(U const& lhs, V const& rhs)
 	{
 		return lhs<rhs?rhs:lhs;
 	}
 }
-
-/* all of the () are required */
-#define maxMacro(x,y) (((x)<(y))?(y):(x))
 
 
 /* {{{ operators() */

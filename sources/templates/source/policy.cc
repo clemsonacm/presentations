@@ -81,6 +81,7 @@ class FlyWeight
 };
 
 
+//{{{main
 int main()
 {
 	FlyWeight<std::tuple<int,int>,Object> f;
@@ -93,4 +94,5 @@ int main()
 	std::cout << (j1.get()==j2.get()) << std::endl;
 	std::cout << f.size() << std::endl;
 }
+//}}}
 // vim: foldmethod=marker

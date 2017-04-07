@@ -1,0 +1,6 @@
+FROM llvm
+
+RUN dnf install -y gdb ctags vim make
+COPY *.cc Makefile /examples/
+WORKDIR /examples/
+

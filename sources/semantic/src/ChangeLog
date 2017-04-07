@@ -1,0 +1,11 @@
+Version 4
+* Remove duplicate code in atomic* methods
+
+Version 3
+* Remove long database type signature
+
+Version 2
+* Removed Magic Values
+
+Version 1
+* Initial Version
